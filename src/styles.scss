@@ -1,4 +1,41 @@
-body{
-    background-color: #141D2F;
-    height: 100vh;
+@font-face {
+  font-family: "poppins";
+  src: url(assets/fonts/poppins/Poppins-Regular.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "poppins";
+  src: url(assets/fonts/poppins/Poppins-Italic.ttf);
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "poppins";
+  src: url(assets/fonts/poppins/Poppins-Bold.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "poppins";
+  src: url(assets/fonts/poppins/Poppins-BoldItalic.ttf);
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+* {
+  font-family: 'poppins', Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #141d2f;
+  height: 100vh;
+  color: white;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 37px 100px 37px 100px;
 }
