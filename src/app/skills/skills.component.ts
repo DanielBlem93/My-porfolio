@@ -9,16 +9,16 @@ export class SkillsComponent {
 
   imageUrls: string[] = [
     '/assets/img/icons/Angular.svg',
-    '/assets/img/icons/Git.svg',
-    '/assets/img/icons/CSS.svg',
-    '/assets/img/icons/HTML.svg',
     '/assets/img/icons/TypeScript.svg',
-    '/assets/img/icons/WordPress.svg',
     '/assets/img/icons/JavaScript.svg',
-    '/assets/img/icons/Material Design.svg',
+    '/assets/img/icons/HTML.svg',
+    '/assets/img/icons/CSS.svg',
+    '/assets/img/icons/Firebase.svg',
+    '/assets/img/icons/WordPress.svg',
+    '/assets/img/icons/GIT.svg',
     '/assets/img/icons/Rest-Api.svg',
     '/assets/img/icons/Scrum.svg',
-    '/assets/img/icons/Firebase.svg',
+    '/assets/img/icons/Material Design.svg',
 
   ]
   getFileName(url: string): string {
