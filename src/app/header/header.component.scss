@@ -14,14 +14,20 @@ header {
 nav {
   display: flex;
   gap: 29px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 23px;
+  & a {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+  }
 }
 
 p {
-  font-size: 32px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.i {
+  color: var(--purple);
+}
+.l {
+  color: var(--green);
 }

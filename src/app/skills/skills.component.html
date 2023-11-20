@@ -1,0 +1,23 @@
+<section id="skills">
+<img class="shape3" src="../../assets/img/shape3.svg" alt="">
+  <div id="skills-container">
+    <div class="skill-icons-container">
+      <div class="skill-icons" *ngFor="let imageUrl of imageUrls">
+        <img class="skill-icon" [src]="imageUrl" alt="Icon" />
+        <p>{{ getFileName(imageUrl) }}</p>
+      </div>
+    </div>
+
+    <div id="my-skills-container">
+      <div id="skills-text">
+        <h1>My skills</h1>
+        <p>
+          I have gained experience in building projects with various front end
+          technologies and concepts.
+        </p>
+      </div>
+          <div id="skills-line"></div>
+      <button class="button-green skills-button">Get in touch</button>
+    </div>
+  </div>
+</section>

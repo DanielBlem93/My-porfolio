@@ -23,9 +23,66 @@
   font-weight: bold;
 }
 
+:root {
+  --green: #70e61c;
+  --lightBlue: #1cdae6;
+  --purple: #9747ff;
+  --darkBlue: #141d2f;
+  --darkBlueTransparant: #141d2fcc;
+}
+
 * {
   font-family: "poppins", Arial, Helvetica, sans-serif;
 }
+//generl stylings
+//========= buttons =========
+
+.button-green {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 165px;
+  height: 58px;
+  border-radius: 10px;
+  background-color: var(--green);
+  color: white;
+  font-size: 20px;
+
+  padding: 15px, 30px, 15px, 30px;
+  margin-top: 50px;
+  filter: drop-shadow(4px 4px 4px 0px #00000040);
+
+  transition: ease-out 300ms;
+  cursor: pointer;
+  &:hover {
+    margin-top: 39px;
+    width: 198px;
+    height: 70px;
+    border: 1px solid var(--purple);
+    background-color: var(--purple);
+    font-size: 23px;
+  }
+  &:active {
+    color: black;
+  }
+}
+
+//========== links==========
+
+.regularLink {
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+  transition: 125ms ease-in;
+
+  &:hover {
+    color: var(--purple);
+  }
+  &:active {
+    color: black;
+  }
+}
+
 body {
   margin: 0;
   display: flex;

@@ -4,14 +4,15 @@
   align-items: center;
   position: relative;
   width: 100vw;
+  gap: 100px;
 }
 
 #intro-container {
-    width: 80%;
-    display: flex;
-    align-items: center;
-   gap: 50px;
-  }
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
 .shape1 {
   position: absolute;
   top: 250px;
@@ -31,7 +32,7 @@
   object-fit: contain;
 }
 
-.greenPurpleShadow {
+.green-purple-shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,27 +43,101 @@
   display: flex;
   align-items: center;
   z-index: 10;
-}
-
-#introduceing-container > span:first-child {
-  font-size: 64px;
-  transform: rotate(180deg);
-  writing-mode: vertical-rl;
-  height: 175px;
+  flex-direction: column;
 }
 
 .text-container {
   display: flex;
-  flex-direction: column;
+
+  > span:first-child {
+    font-size: 64px;
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    height: 175px;
+  }
 }
 
-.text-container span:first-child {
-  font-size: 90px;
-  font-weight: bold;
-  height: 108px;
+.name-container {
+  display: flex;
+  flex-direction: column;
+
+  & span:first-child {
+    font-size: 90px;
+    font-weight: bold;
+    height: 108px;
+  }
+
+  & span:nth-child(2) {
+    font-size: 58px;
+    color: var(--purple);
+    height: 70px;
+  }
 }
-.text-container span:nth-child(2) {
-  font-size: 58px;
-  color: #9747ff;
-  height: 70px;
+
+#references-line {
+  width: 100%;
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 42px;
+  z-index: 2;
 }
+
+.line {
+  width: 151px;
+  height: 4px;
+
+  background-color: var(--purple);
+}
+
+.social-media-container {
+  display: flex;
+
+  align-items: center;
+  gap: 42px;
+}
+.scrollDown {
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 64px;
+  writing-mode: vertical-rl;
+  & svg {
+    fill: white;
+    transition: 125ms ease-in;
+    z-index: 10;
+    cursor: pointer;
+  }
+  & a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &:hover svg {
+    fill: var(--purple) !important;
+  }
+}
+.socialIcon{
+  cursor: pointer;
+  transition: 125ms ease-in;
+  
+  &:hover{
+    transform: scale(1.3);
+  }
+}
+.gitHubIcon:hover {
+  
+
+
+& ~.gitHubHover{
+
+}
+}
+
+// .socialIcon:nth-of-type(2){
+//   display: flex;
+//   width: 200px;
+// }
