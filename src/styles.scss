@@ -139,3 +139,30 @@ section{
 #intro{
   margin: 0;
 }
+
+.daniel {
+  font-size: 40px;
+  font-weight: bold;
+}
+.i {
+  color: var(--purple);
+}
+.l {
+  color: var(--green);
+}
+
+.social-media-container {
+  display: flex;
+
+  align-items: center;
+  gap: 42px;
+}
+
+.socialIcon {
+  cursor: pointer;
+  transition: 125ms ease-in;
+
+  &:hover {
+    transform: scale(1.3);
+  }
+}

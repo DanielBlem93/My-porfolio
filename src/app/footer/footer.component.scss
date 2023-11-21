@@ -1,0 +1,28 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 291px;
+    border-top: 4px solid var(--green);
+}
+
+#footer{
+    width: var(--mainMargin);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright{
+    font-size: 23px;
+}
+
+a{
+    font-size: 16px;
+}
+
+.daniel-footer{
+    margin: 0;
+    font-size: 46px;
+}
