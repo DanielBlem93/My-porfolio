@@ -1,0 +1,53 @@
+<section id="portfolio">
+  <div id="headline-container">
+    <div style="opacity: 0" class="long-line"></div>
+    <div class="flex-container">
+      <div id="headline">
+        <div class="short-line"></div>
+        <h1>Portfolio</h1>
+        <div class="long-line"></div>
+      </div>
+    </div>
+  </div>
+  <span style="text-align: center"
+    >This page is a sample of my work - please feel free to try them out.</span
+  >
+  <div id="portfolio-container">
+    <!-- <div *ngFor="let project of projects">
+    <app-porjekt id="projects">
+      [projectName]="project.name" [projectImage]="project.image"
+      [description]="project.description" [technologies]="project.technologies"
+      [githubLink]="project.githubLink" [projectUrl]="project.projectUrl"
+      ></app-porjekt
+    >
+  </div> -->
+
+    <div
+      class="projekts-container"
+      *ngFor="let project of projectList; let i = index"
+    >
+      <img [src]="project.image" alt="" />
+      <div class="projekt-description">
+        <h2>{{ project.name }}</h2>
+        <span class="tech-font">{{ project.technologies }}</span>
+        <p>
+          {{ project.description }}
+        </p>
+        <div class="buttons-container">
+          <button
+            (click)="redirectToProject(project.projectUrl)"
+            class="button-purple"
+          >
+            Live test
+          </button>
+          <button
+            (click)="redirectToProject(project.githubLink)"
+            class="button-transperant"
+          >
+            Git Hub
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

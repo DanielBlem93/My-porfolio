@@ -8,5 +8,10 @@
 main{
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  align-items: center;
+  
+}
+
+#projects{
+  background-color: antiquewhite;
 }

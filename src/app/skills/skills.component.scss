@@ -9,15 +9,16 @@
 }
 #skills-container {
   display: flex;
-  width: 80%;
+  width: var(--mainMargin);
   justify-content: space-between;
 }
 
 .skill-icons-container {
   display: flex;
   flex-wrap: wrap;
-  //   width: 50%;
+  width: 70%;
   gap: 123px;
+  z-index: 5;
 }
 
 .skill-icons {
@@ -34,6 +35,13 @@
 .skill-icon {
   height: 60px;
   width: 60px;
+  transition: ease-in-out 325ms;
+}
+
+.skill-icons {
+  &:hover .skill-icon {
+    transform: translateY(-30px) scale(1.1);
+  }
 }
 
 #my-skills-container {
@@ -41,7 +49,7 @@
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  //   width: 50%;
+    width: 40%;
 
   & h1 {
     margin: 0;

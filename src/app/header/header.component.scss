@@ -1,11 +1,16 @@
 header {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   width: 100vw;
+  z-index: 20;
+  height: 109px;
+  background-color: var(--darkBlue);
   // padding: 37px 100px 37px 100px;
 }
 #header-container {
-  width: 80%;
+  width: var(--mainMargin);
   display: flex;
   align-items: center;
   justify-content: space-between;

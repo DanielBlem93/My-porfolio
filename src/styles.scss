@@ -24,17 +24,23 @@
 }
 
 :root {
+  //Main colors
   --green: #70e61c;
   --lightBlue: #1cdae6;
   --purple: #9747ff;
   --darkBlue: #141d2f;
   --darkBlueTransparant: #141d2fcc;
+
+  // Margin or the left and right side on the page
+  --mainMargin: 85%;
 }
 
 * {
   font-family: "poppins", Arial, Helvetica, sans-serif;
 }
-//generl stylings
+
+//!!!================generell stylings==============!!!
+
 //========= buttons =========
 
 .button-green {
@@ -55,15 +61,49 @@
   transition: ease-out 300ms;
   cursor: pointer;
   &:hover {
-    margin-top: 39px;
-    width: 198px;
-    height: 70px;
+    transform: scale(1.2);
     border: 1px solid var(--purple);
     background-color: var(--purple);
-    font-size: 23px;
   }
   &:active {
     color: black;
+  }
+}
+
+.button-purple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 152px;
+  height: 58px;
+  padding: 15px, 30px, 15px, 30px;
+  border-radius: 10px;
+  background-color: var(--purple);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: ease-out 300ms;
+  &:hover {
+    background-color: var(--green);
+  }
+}
+
+.button-transperant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 152px;
+  height: 58px;
+  padding: 15px, 30px, 15px, 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  border: 1px solid var(--green);
+  cursor: pointer;
+  transition: ease-out 300ms;
+  &:hover {
+    background-color: var(--green);
   }
 }
 
@@ -92,4 +132,10 @@ body {
   width: 100%;
   color: white;
   overflow-x: hidden;
+}
+section{
+  margin-top: 150px;
+}
+#intro{
+  margin: 0;
 }

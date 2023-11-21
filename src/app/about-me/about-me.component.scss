@@ -15,7 +15,7 @@
 }
 
 #about-me-container {
-  width: 80%;
+  width: var(--mainMargin);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
