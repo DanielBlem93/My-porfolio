@@ -1,65 +1,24 @@
 <section id="contact">
   <div id="contact-container">
-    <div id="contact-headline">
-      <div
-        _ngcontent-ng-c933717042=""
-        class="contactContainer ng-tns-c933717042-3"
-      >
-        <div>
-          <h1>Contact</h1>
-        </div>
-        <div>
-          <div>
-            <h4>Gibt es ein Problem zu lösen?</h4>
-            <p>
-              Kontaktieren Sie mich über dieses Formular, ich habe Interesse
-              daran, von Ihnen zu hören, Ihre Ideen zu erfahren und mit meiner
-              Arbeit zu Ihren Projekten beizutragen.
-            </p>
-            <p>
-              Brauchen Sie einen Frontend-Entwickler?
-              <strong> Kontaktieren Sie mich!</strong>
-            </p>
-          </div>
-          <div>
-            <form>
-              <div>
-                <input formcontrolname="name" type="text" placeholder="Name" />
-              </div>
-              <div>
-                <input
-                  formcontrolname="email"
-                  type="text"
-                  placeholder="Email"
-                />
-              </div>
-              <div>
-                <textarea
-                  formcontrolname="message"
-                  placeholder="Nachricht"
-                ></textarea>
-              </div>
-              <div>
-                <input name="check" type="checkbox" />
-                <p>
-                  Bitte akzeptieren Sie die
-                  <a>Datenschutzrichtlinie</a>
-                  und stimmen Sie der Verarbeitung meiner Daten wie dargelegt
-                  zu.
-                </p>
-              </div>
-              <button
-                type="submit"
-                class="ng-tns-c933717042-3"
-                disabled=""
-                style="background-color: rgb(182, 182, 182)"
-              >
-                Senden
-              </button>
-            </form>
-          </div>
-        </div>
+    <div class="small-line-contact"></div>
+
+    <h2>Contact</h2>
+    <div id="form-container">
+      <div class="text-container">
+        <h3>Got a problem to solve?</h3>
+        <p>
+          Contact me through this form, I am interested in hearing you, knowing
+          your ideas and contributing to your projects with my work.
+        </p>
+        <p>Need a Frontend developer? Contact me!</p>
       </div>
+      <form action="https://daniel-blem.developerakademie.net/Portfolio/send_mail/send_mail.php" method="post">
+        <input type="text" name="name" />
+        <textarea type="text" name="message"></textarea>
+        <button>Senden</button>
+        <!-- <input type="email" name="email" id="name" /> -->
+        <!-- <input type="checkbox" name="" id="checkbox" /> -->
+      </form>
     </div>
   </div>
 </section>
