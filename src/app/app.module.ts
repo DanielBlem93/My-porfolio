@@ -9,8 +9,10 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PorjektComponent } from './porjekt/porjekt.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './contact/ContactComponent';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,15 @@ import { FooterComponent } from './footer/footer.component';
     PortfolioComponent,
     PorjektComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
