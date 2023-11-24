@@ -29,12 +29,69 @@
   }
 }
 
-#form-container{
+#form-container {
   display: flex;
 }
 
-form{
+form {
   width: 50%;
   display: flex;
   flex-direction: column;
+
+  gap: 32px;
+}
+
+input,
+textarea {
+  border-radius: 10px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid var(--purple);
+  color: white;
+  padding: 15px, 25px, 15px, 25px;
+
+  &::placeholder {
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid var(--green);
+  }
+
+  &::content {
+    padding-left: 15px;
+  }
+}
+
+textarea {
+  height: 200px;
+  min-height: 50;
+  &:focus {
+    outline: none;
+    border: 1px solid var(--green);
+  }
+
+  &::content {
+    padding-top: 15px;
+  }
+}
+#checkbox-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+background: green;
+}
+
+.policy-link {
+  text-decoration: none;
+  color: var(--purple);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

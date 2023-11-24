@@ -13,6 +13,11 @@
   align-items: center;
   gap: 50px;
 }
+
+#me-container {
+  position: relative;
+}
+
 .shape1 {
   position: absolute;
   top: 250px;
@@ -20,15 +25,13 @@
   width: 100%;
   z-index: 2;
 }
-#me-container {
-  position: relative;
-}
 
 #me {
+  // transform: rotate(4deg);
   position: relative;
   top: 120px;
   z-index: 1;
-  height: 705px;
+  height: 1005px;
   object-fit: contain;
 }
 
@@ -40,6 +43,7 @@
 }
 
 #introduceing-container {
+  
   display: flex;
   align-items: center;
   z-index: 10;
@@ -75,6 +79,8 @@
 }
 
 #references-line {
+  position: absolute;
+  top: 740px;
   width: 100%;
   display: flex;
   align-self: flex-start;
@@ -89,7 +95,6 @@
 
   background-color: var(--purple);
 }
-
 
 .scrollDown {
   font-size: 23px;

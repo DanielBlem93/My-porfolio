@@ -30,7 +30,7 @@
           required
           #emailField="ngModel"
           [(ngModel)]="formData.email"
-          />
+        />
         <textarea
           type="text"
           name="message"
@@ -40,9 +40,14 @@
           required
         ></textarea>
         <div id="checkbox-container">
-          <input type="checkbox" name="" id="" />
+          <input required type="checkbox" name="" id="" />
+          <p>
+            I've read the <a class="policy-link" href="">privacy policy</a> and agree to the
+            processing of my data as outlined.
+          </p>
         </div>
-        <button type="submit" [disabled]="!myForm.valid">Senden</button>
+
+        <button class="button-grey" type="submit" [disabled]="!myForm.valid">Send message :)</button>
       </form>
     </div>
   </div>
