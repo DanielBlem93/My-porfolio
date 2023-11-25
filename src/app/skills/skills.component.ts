@@ -21,7 +21,7 @@ export class SkillsComponent {
     '/assets/img/icons/Material Design.svg',
 
   ]
-  getFileName(url: string): string {
+  getFileName(url: string) {
     // Extrahiere den Dateinamen und entferne die Dateiendung
     const fileNameWithExtension = url.split('/').pop(); // Letztes Element nach dem Split
     const fileNameWithoutExtension = fileNameWithExtension?.split('.')[0];

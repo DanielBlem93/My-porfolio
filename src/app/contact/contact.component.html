@@ -27,9 +27,9 @@
           name="email"
           id="email"
           placeholder="Your email"
-          required
           #emailField="ngModel"
           [(ngModel)]="formData.email"
+          required
         />
         <textarea
           type="text"
@@ -40,14 +40,15 @@
           required
         ></textarea>
         <div id="checkbox-container">
-          <input required type="checkbox" name="" id="" />
+          <input required type="checkbox" name="privacy policy" id="policy" />
           <p>
             I've read the <a class="policy-link" href="">privacy policy</a> and agree to the
             processing of my data as outlined.
           </p>
         </div>
-
+        
         <button class="button-grey" type="submit" [disabled]="!myForm.valid">Send message :)</button>
+        <img class="pageUp" src="../../assets/img/icons/Go up button.svg" alt="Up Page Arrow">
       </form>
     </div>
   </div>

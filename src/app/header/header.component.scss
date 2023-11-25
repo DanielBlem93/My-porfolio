@@ -26,4 +26,13 @@ nav {
   }
 }
 
+.navLinks {
+  &:hover {
+    color: var(--green);
+    text-decoration: underline;
+    text-decoration-color: var(--purple);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 10px;
+  }
+}
 

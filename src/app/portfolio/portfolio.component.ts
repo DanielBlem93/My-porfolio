@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PorjektComponent } from '../porjekt/porjekt.component';
 import { Router } from '@angular/router';
 
 

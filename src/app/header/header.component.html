@@ -2,10 +2,24 @@
   <div id="header-container">
     <p class="daniel">Dan<span class="i">i</span>e<span class="l">l</span></p>
     <nav>
-      <a href="#">About me</a>
-      <a href="#">Skills</a>
-      <a href="#">Portfolio</a>
+      <a
+        class="navLinks"
+        href="#about-me"
+        [class.active]="activeSection === 'about-me'"
+        >About me</a
+      >
+      <a
+        class="navLinks"
+        href="#skills"
+        [class.active]="activeSection === 'skills'"
+        >Skills</a
+      >
+      <a
+        class="navLinks"
+        href="#portfolio"
+        [class.active]="activeSection === 'portfolio'"
+        >Portfolio</a
+      >
     </nav>
   </div>
- 
 </header>
