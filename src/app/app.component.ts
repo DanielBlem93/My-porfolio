@@ -1,5 +1,5 @@
-import { Component, Renderer2,ElementRef,HostListener } from '@angular/core';
-
+import { Component, Renderer2, ElementRef, HostListener } from '@angular/core';
+import { ScrollService } from './scroll.service'; 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,34 +8,20 @@ import { Component, Renderer2,ElementRef,HostListener } from '@angular/core';
 export class AppComponent {
   title = 'portfolio';
 
-  
 
 
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
-  @HostListener('window:scroll', [])
-  onScroll() {
-    // Finde alle Links mit der Klasse "scroll-link"
-    const scrollLinks = this.el.nativeElement.querySelectorAll('.scroll-link');
+  constructor(private scrollService: ScrollService) {}
 
-    // Iteriere durch alle Links
-    scrollLinks.forEach(link => {
-      // Finde das Ziel des Links
-      const targetId = link.getAttribute('data-target');
-      const targetElement = document.getElementById(targetId);
-
-      // Überprüfe, ob das Ziel im sichtbaren Bereich ist
-      if (this.isElementInViewport(targetElement)) {
-        // Setze den aktiven Abschnitt
-        this.activeSection = targetId;
-      }
-    });
+  ngOnInit() {
+    // Optional: Du kannst die Methode hier aufrufen, wenn du die Scroll-Position sofort erhalten möchtest.
+    this.onScroll();
   }
 
-  // Funktion, um zu überprüfen, ob ein Element im sichtbaren Bereich ist
-  private isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+  onScroll() {
+    // Hier kannst du auf die aktuelle vertikale Scroll-Position zugreifen
+    const scrollTop = this.scrollService.getScrollTop();
+    console.log('Current Scroll Position:', scrollTop);
   }
 }

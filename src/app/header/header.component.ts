@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { ScrollService } from '../scroll.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,11 +9,11 @@ import { AppComponent } from '../app.component';
 
 
 export class HeaderComponent {
-  appComponent = new AppComponent()
-  activeSection: string = ''
 
-  constructor() {
-    this.activeSection = this.appComponent.activeSection
+
+
+  constructor(public scrollService: ScrollService) {
+
 
   }
 

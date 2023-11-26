@@ -5,19 +5,19 @@
       <a
         class="navLinks"
         href="#about-me"
-        [class.active]="activeSection === 'about-me'"
+        [class.active]="scrollService.activeSection === 'about-me'"
         >About me</a
       >
       <a
         class="navLinks"
         href="#skills"
-        [class.active]="activeSection === 'skills'"
+        [class.active]="scrollService.activeSection === 'skills'"
         >Skills</a
       >
       <a
         class="navLinks"
         href="#portfolio"
-        [class.active]="activeSection === 'portfolio'"
+        [class.active]="scrollService.activeSection === 'portfolio'"
         >Portfolio</a
       >
     </nav>
