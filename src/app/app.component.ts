@@ -1,5 +1,5 @@
-import { Component, Renderer2, ElementRef, HostListener } from '@angular/core';
-import { ScrollService } from './scroll.service'; 
+import { Component, Renderer2, ElementRef, HostListener, ViewChild, } from '@angular/core';
+import { ScrollService } from './scroll.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,16 +12,29 @@ export class AppComponent {
 
 
 
-  constructor(private scrollService: ScrollService) {}
+  constructor(public scrollService: ScrollService) {
 
+
+  }
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    // this.scrollService.initScrollPosition()
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    // this.scrollService.initScrollPosition()
+
+  }
+
+
+
+  ngAfterViewInit() {
+  
+  }
   ngOnInit() {
-    // Optional: Du kannst die Methode hier aufrufen, wenn du die Scroll-Position sofort erhalten möchtest.
-    this.onScroll();
+
   }
 
-  onScroll() {
-    // Hier kannst du auf die aktuelle vertikale Scroll-Position zugreifen
-    const scrollTop = this.scrollService.getScrollTop();
-    console.log('Current Scroll Position:', scrollTop);
-  }
+
 }

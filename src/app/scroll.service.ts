@@ -1,21 +1,63 @@
-import { Injectable, HostListener } from '@angular/core';
+// import { Injectable, HostListener, ViewChild, ElementRef } from '@angular/core';
+// import { AboutMeComponent } from './about-me/about-me.component';
+// import { SkillsComponent } from './skills/skills.component';
+// import { PortfolioComponent } from './portfolio/portfolio.component';
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class ScrollService {
+//   public activeSection: string = ''
+//   public currentScrollPosition: number = 0
+//   public aboutMeSelektor:ElementRef
+//   public skillsSelektor:ElementRef
+//   public portfolioSelektor:ElementRef
+
+  
+//   getCurrentScrollPosition() {
+//     return window.scrollY
+//   }
+
+//   initScrollPosition() {
+//     this.currentScrollPosition = this.getCurrentScrollPosition()
+//   }
+
+
+
+
+//   checkScrolWithElement(position, element) {
+
+//     if (position < element) {
+//       this.activeSection = 'about-me'
+
+//     }
+//   }
+
+
+// }
+
+// scroll.service.ts
+
+
+import { Injectable,ElementRef } from '@angular/core';
+import { Observable, fromEvent } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ScrollService {
-  private scrollTop: number = 0;
+  public scrollEvent: Observable<number>;
 
-activeSection :string =''
-
-  getScrollTop(): number {
-    return this.scrollTop;
+  constructor() {
+    this.scrollEvent = fromEvent(window, 'scroll').pipe(
+      map(() => window.scrollY)
+    );
   }
 
-  @HostListener('document:scroll', [])
-  onScroll() {
-    this.scrollTop = window.scrollY || document.documentElement.scrollTop;
-    console.log('Scroll position:', this.scrollTop);
-    console.log(this.getScrollTop())
+  getElementPosition(element: ElementRef) {
+    const { x, y } = element.nativeElement.getBoundingClientRect();
+    return y
   }
+
+
 }

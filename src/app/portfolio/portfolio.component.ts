@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-
-
+import { ScrollService } from '../scroll.service';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,13 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
+  @ViewChild('portfolio') portfolio: ElementRef
 
-  // projekt: PorjektComponent;
 
 
+
+  portfolioPosition: number
   projectList: any
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private scrollService: ScrollService, private DataServiceService: DataServiceService) {
 
 
     this.projectList = [
@@ -40,13 +42,23 @@ export class PortfolioComponent implements OnInit {
     ]
   }
 
-  
-  redirectToProject(projectUrl: string  ): void {
+
+  redirectToProject(projectUrl: string): void {
     window.open(projectUrl, '_blank');
   }
 
   ngOnInit(): void {
 
     console.log(this.projectList)
+  }
+
+
+
+
+  ngAfterViewInit(): void {
+
+    this.portfolioPosition = this.scrollService.getElementPosition(this.portfolio)
+    this.DataServiceService.portfolioPosition = this.portfolioPosition
+
   }
 }

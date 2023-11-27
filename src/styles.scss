@@ -124,13 +124,6 @@
 
 //========== links==========
 
-.active{
-  color: var(--green);
-  text-decoration: underline;
-  text-decoration-color: var(--purple);
-  text-decoration-thickness: 4px;
-  text-underline-offset: 10px;
-}
 
 
 .regularLink {
@@ -146,6 +139,15 @@
     color: black;
   }
 }
+
+.active{
+  color: var(--green) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--purple) !important;
+  text-decoration-thickness: 4px !important;
+  text-underline-offset: 10px!important;
+}
+
 
 body {
   margin: 0;

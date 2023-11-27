@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ScrollService } from '../scroll.service';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-skills',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent {
+  @ViewChild('skills') skills: ElementRef
+
+
+  skillsPosition: number
 
   imageUrls: string[] = [
     '/assets/img/icons/Angular.svg',
@@ -26,5 +32,17 @@ export class SkillsComponent {
     const fileNameWithExtension = url.split('/').pop(); // Letztes Element nach dem Split
     const fileNameWithoutExtension = fileNameWithExtension?.split('.')[0];
     return fileNameWithoutExtension || '';
+  }
+
+  constructor(private scrollService: ScrollService, private DataServiceService: DataServiceService) {
+
+  }
+
+
+  ngAfterViewInit(): void {
+
+    this.skillsPosition = this.scrollService.getElementPosition(this.skills)
+    this.DataServiceService.skillsPosition = this.skillsPosition
+
   }
 }

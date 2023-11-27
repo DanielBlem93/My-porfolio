@@ -1,7 +1,7 @@
 <header>
   <div id="header-container">
     <p class="daniel">Dan<span class="i">i</span>e<span class="l">l</span></p>
-    <nav>
+    <!-- <nav>
       <a
         class="navLinks"
         href="#about-me"
@@ -18,6 +18,31 @@
         class="navLinks"
         href="#portfolio"
         [class.active]="scrollService.activeSection === 'portfolio'"
+        >Portfolio</a
+      >
+    </nav> -->
+    <nav>
+      <a
+        class="navLinks"
+        href="#about-me"
+        [class.active]="
+          (scrollEvent | async) > aboutMeposition - 450 &&
+          (scrollEvent | async) < skillsPosition - 500
+        "
+        >About me</a
+      >
+      <a
+        class="navLinks"
+        href="#skills"
+        [class.active]="(scrollEvent | async) >= skillsPosition - 500 &&
+        (scrollEvent | async) < portfolioPosition - 500"
+        >Skills</a
+      >
+      <a
+        class="navLinks"
+        href="#portfolio"
+        [class.active]="(scrollEvent | async) >= portfolioPosition -500 &&
+        (scrollEvent | async) < portfolioPosition + 1500"
         >Portfolio</a
       >
     </nav>
