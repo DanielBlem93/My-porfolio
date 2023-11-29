@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
 
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
 
 
   }
@@ -38,16 +38,16 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
-      }
-    });
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     window.scrollTo(0, 0);
+    //   }
+    // });
 
-    // Deaktiviere die Scroll-Wiederherstellung des Browsers
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
+    // // Deaktiviere die Scroll-Wiederherstellung des Browsers
+    // if ('scrollRestoration' in history) {
+    //   history.scrollRestoration = 'manual';
+    // }
   }
 
 }

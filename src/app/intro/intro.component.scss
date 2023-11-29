@@ -1,4 +1,5 @@
 #intro {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +12,8 @@
   width: var(--mainMargin);
   display: flex;
   align-items: center;
-  gap: 50px;
+  justify-content: space-around;
+  
 }
 
 #me-container {
@@ -20,7 +22,7 @@
 
 .shape1 {
   position: absolute;
-  top: 250px;
+  top: 182px;
   right: 0;
   width: 100%;
   z-index: 2;
@@ -29,25 +31,26 @@
 #me {
   // transform: rotate(4deg);
   position: relative;
-  top: 120px;
+  top: 20px;
   z-index: 1;
-  height: 1005px;
+  height: 1000px;
   object-fit: contain;
 }
 
 .green-purple-shadow {
   position: absolute;
   top: 170px;
-  left: -50px;
+  left: -200px;
   z-index: 0;
 }
 
 #introduceing-container {
-  
+  position: relative;
   display: flex;
   align-items: center;
   z-index: 10;
   flex-direction: column;
+  bottom: 190px;
 }
 
 .text-container {
@@ -80,7 +83,7 @@
 
 #references-line {
   position: absolute;
-  top: 740px;
+  top: 650px;
   width: 100%;
   display: flex;
   align-self: flex-start;
@@ -117,5 +120,68 @@
 
   &:hover svg {
     fill: var(--purple) !important;
+  }
+}
+
+@media (max-width: 1850px) {
+  .shape1 {
+  }
+
+ 
+}
+@media (max-width: 1650px) {
+  .shape1 {
+  }
+  #me {
+    height: 800px;
+  }
+}
+@media (max-width: 1500px) {
+  #me {
+
+  }
+
+  .shape1{
+    top: 260px;
+  }
+
+  #references-line{
+    top: 625px;
+  }
+  .text-container {
+    > span:first-child {
+      font-size: 41px;
+      height: 111px;
+    }
+  }
+
+  .name-container {
+    & span:first-child {
+      font-size: 57px;
+      height: 69px;
+    }
+    & span:nth-child(2) {
+      font-size: 36px;
+      height: 48px;
+    }
+  }
+
+  #intro-container {
+
+  }
+}
+
+@media (max-width: 1160px) {
+  .shape1{
+    top: 300px;
+  }
+}
+@media (max-width: 1060px) {
+  #references-line{
+    top: 490px;
+  }
+
+  #me {
+    top: 0px;
   }
 }
