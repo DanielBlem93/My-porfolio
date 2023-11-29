@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ScrollService } from '../scroll.service';
 import { DataServiceService } from '../data-service.service';
 
@@ -10,7 +10,7 @@ import { DataServiceService } from '../data-service.service';
 export class SkillsComponent {
   @ViewChild('skills') skills: ElementRef
 
-
+  elementHight: number;
   skillsPosition: number
 
   imageUrls: string[] = [
@@ -27,6 +27,7 @@ export class SkillsComponent {
     '/assets/img/icons/Material Design.svg',
 
   ]
+
   getFileName(url: string) {
     // Extrahiere den Dateinamen und entferne die Dateiendung
     const fileNameWithExtension = url.split('/').pop(); // Letztes Element nach dem Split
@@ -34,15 +35,44 @@ export class SkillsComponent {
     return fileNameWithoutExtension || '';
   }
 
-  constructor(private scrollService: ScrollService, private DataServiceService: DataServiceService) {
+  constructor(private sS: ScrollService, private dS: DataServiceService) {
+
+  }
+
+  ngOnInit(): void {
 
   }
 
 
   ngAfterViewInit(): void {
-
-    this.skillsPosition = this.scrollService.getElementPosition(this.skills)
-    this.DataServiceService.skillsPosition = this.skillsPosition
+    this.sendToDataService()
 
   }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.sendToDataService()
+  }
+
+
+  sendToDataService() {
+    this.getElementHight()
+    this.getSkillsPosition()
+  }
+
+
+  getElementHight() {
+    let height = this.skills.nativeElement.offsetHeight
+    this.elementHight = height
+    this.dS.skillsHight = this.elementHight
+    console.log('skills height:', height)
+  }
+
+  getSkillsPosition() {
+    this.skillsPosition = this.sS.getElementPosition(this.skills)
+    this.dS.skillsPosition = this.skillsPosition
+  }
+
+
+
 }

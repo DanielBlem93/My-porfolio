@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
+import { ScrollService } from '../scroll.service';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +13,9 @@ export class ContactComponent implements OnInit {
   @ViewChild('nameField') nameField!: NgModel;
   @ViewChild('emailField') emailField!: NgModel;
   @ViewChild('messageField') messageField!: NgModel;
+  @ViewChild('contact') contact: ElementRef
+
+  contactPosition
 
   formData = {
     name: '',
@@ -18,11 +23,35 @@ export class ContactComponent implements OnInit {
     message: ''
   };
 
-  constructor() {
+
+  constructor(public sS: ScrollService, public dS: DataServiceService) {
   }
+
 
   ngOnInit(): void {
   }
+
+  ngAfterViewInit(): void {
+    this.sendToDataService()
+  }
+
+
+  @HostListener('window:resize')
+  onResize() {
+    this.sendToDataService()
+  }
+
+
+  getContactPosition() {
+    this.contactPosition = this.sS.getElementPosition(this.contact)
+    this.dS.contactPosition = this.contactPosition
+  }
+
+
+  sendToDataService() {
+    this.getContactPosition()
+  }
+
 
   async sendMail() {
     console.log('sending mail', this.myForm);
@@ -31,17 +60,20 @@ export class ContactComponent implements OnInit {
     this.enableForm();
   }
 
+
   disableForm() {
     this.nameField.control.disable();
     this.emailField.control.disable();
     this.messageField.control.disable();
   }
 
+
   enableForm() {
     this.nameField.control.enable();
     this.emailField.control.enable();
     this.messageField.control.enable();
   }
+
 
   async sending() {
     try {

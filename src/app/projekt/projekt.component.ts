@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-porjekt',
-  templateUrl: './porjekt.component.html',
+  selector: 'app-projekt',
+  templateUrl: './projekt.component.html',
   styleUrls: ['./porjekt.component.scss']
 })
-export class PorjektComponent {
+export class ProjektComponent {
   projectName!: string;
   @Input() projectImage!: string;
   @Input() description!: string;
@@ -13,8 +13,8 @@ export class PorjektComponent {
   @Input() githubLink!: string;
   @Input() projectUrl!: string;
 
-  public test = "Test bestanden"
+
   constructor() {
-    this.projectName = "test"
+
   }
 }

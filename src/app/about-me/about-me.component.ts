@@ -1,6 +1,5 @@
 import { Component, HostListener, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { ScrollService } from '../scroll.service';
-import { AppComponent } from '../app.component';
 import { DataServiceService } from '../data-service.service';
 @Component({
   selector: 'app-about-me',
@@ -11,38 +10,53 @@ import { DataServiceService } from '../data-service.service';
 
 
 export class AboutMeComponent implements OnInit {
-
+  elementHight: number
   aboutMePosition: number
   active: boolean
 
-  
-  
-  constructor(private scrollService: ScrollService, private DataServiceService: DataServiceService) {
-    
-    
-    
-    
+
+
+  constructor(private sS: ScrollService, private dS: DataServiceService) {
+
   }
-  
+
   @ViewChild('aboutMe') aboutme: ElementRef
 
   ngAfterViewInit(): void {
-
-    this.aboutMePosition = this.scrollService.getElementPosition(this.aboutme)
-    this.DataServiceService.aboutMeposition = this.aboutMePosition
-
+    this.sendToDataService()
   }
 
-  checkActive() {
-    // if (this.aboutMePosition < this.scrollService.currentScrollPosition) 
-    {
-      this.active = true
+  ngOnInit(): void { }
+
+
+  @HostListener('window:resize')
+  onResize() {
+    this.sendToDataService()
+    console.log('aboutMe height:', this.elementHight)
+  }
+
+  sendToDataService() {
+    this.getElementHight()
+    this.getAboutMePosition()
+  }
+
+
+  getElementHight() {
+    let height = this.aboutme.nativeElement.offsetHeight
+    if (height <= 0) {
+      height = 0
     }
+    this.elementHight = height
+    this.dS.aboutMeHight = this.elementHight
+    console.log('aboutMe height:', height)
+  }
+
+  getAboutMePosition() {
+    this.aboutMePosition = this.sS.getElementPosition(this.aboutme)
+    this.dS.aboutMeposition = this.aboutMePosition
   }
 
 
-  ngOnInit(): void {
 
-  }
 
 }
