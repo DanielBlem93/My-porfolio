@@ -92,6 +92,15 @@
   z-index: 2;
 }
 
+
+.social-media-container{
+  & a{
+    display: flex;
+    align-items: center;
+  }
+
+
+}
 .line {
   width: 151px;
   height: 4px;

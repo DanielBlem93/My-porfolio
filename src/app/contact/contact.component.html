@@ -21,7 +21,11 @@
           #nameField="ngModel"
           [(ngModel)]="formData.name"
           required
+          (ngModelChange)="
+            fieldStatus.name = nameField.valid; updateAllFieldsValid()
+          "
         />
+
         <input
           type="email"
           name="email"
@@ -30,7 +34,11 @@
           #emailField="ngModel"
           [(ngModel)]="formData.email"
           required
+          (ngModelChange)="
+            fieldStatus.email = emailField.valid; updateAllFieldsValid()
+          "
         />
+
         <textarea
           type="text"
           name="message"
@@ -38,17 +46,49 @@
           #messageField="ngModel"
           [(ngModel)]="formData.message"
           required
+          (ngModelChange)="
+            fieldStatus.message = messageField.valid; updateAllFieldsValid()
+          "
         ></textarea>
+
         <div id="checkbox-container">
-          <input required type="checkbox" name="privacy policy" id="policy" />
+          <input
+            required
+            type="checkbox"
+            name="privacy policy"
+            id="policy"
+            #policyField="ngModel"
+            [(ngModel)]="formData.privacyPolicy"
+            (ngModelChange)="
+              fieldStatus.privacyPolicy = policyField.valid;
+              updateAllFieldsValid()
+            "
+          />
+
           <p>
-            I've read the <a class="policy-link" href="">privacy policy</a> and agree to the
-            processing of my data as outlined.
+            I've read the <a class="policy-link" href="">privacy policy</a> and
+            agree to the processing of my data as outlined.
           </p>
         </div>
-        
-        <button class="button-grey" type="submit" [disabled]="!myForm.valid">Send message :)</button>
-        <img class="pageUp" src="../../assets/img/icons/Go up button.svg" alt="Up Page Arrow">
+
+        <button
+          class="button-grey"
+          type="submit"
+          [disabled]="!fieldStatus.allFieldsValid"
+          [ngClass]="{
+            'button-valid': fieldStatus.allFieldsValid,
+            'button-grey': !fieldStatus.allFieldsValid
+          }"
+        >
+          Send message :)
+        </button>
+
+        <img
+          onclick="window.location.href='#'"
+          class="pageUp"
+          src="../../assets/img/icons/Go up button.svg"
+          alt="Up Page Arrow"
+        />
       </form>
     </div>
   </div>

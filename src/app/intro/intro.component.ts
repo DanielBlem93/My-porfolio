@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent {
-
+  sendEmail(address) {
+    window.location.href = 'mailto:' + address;
+  }
 }
+

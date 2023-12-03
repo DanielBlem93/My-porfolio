@@ -50,7 +50,7 @@
   flex-direction: column;
   align-items: center;
   gap: 64px;
-    width: 40%;
+  width: 40%;
 
   & h1 {
     margin: 0;
@@ -93,4 +93,33 @@
   top: 270px;
   left: -530px;
   z-index: 0;
+}
+
+@media (max-width: 1850px) {
+}
+@media (max-width: 1650px) {
+}
+@media (max-width: 1500px) {
+  .skill-icons-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1160px) {
+  #skills-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    align-items: center;
+    gap: 100px;
+  }
+
+  .skill-icons-container {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 1060px) {
 }

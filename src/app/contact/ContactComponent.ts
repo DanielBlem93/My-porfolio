@@ -20,7 +20,17 @@ export class ContactComponent implements OnInit {
   formData = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    privacyPolicy: false // Assuming it's a boolean value
+  };
+
+
+  fieldStatus = {
+    name: false,
+    email: false,
+    message: false,
+    privacyPolicy: false,
+    allFieldsValid: false
   };
 
 
@@ -52,12 +62,34 @@ export class ContactComponent implements OnInit {
     this.getContactPosition()
   }
 
+  updateAllFieldsValid() {
+    // Check if all individual fields are valid
+    this.fieldStatus.allFieldsValid = this.fieldStatus.name && this.fieldStatus.email && this.fieldStatus.message && this.fieldStatus.privacyPolicy;
+  }
+
+  resetInputs() {
+    this.formData = {
+      name: '',
+      email: '',
+      message: '',
+      privacyPolicy: false
+    };
+
+    this.fieldStatus = {
+      name: false,
+      email: false,
+      message: false,
+      privacyPolicy: false,
+      allFieldsValid: false
+    };
+  }
 
   async sendMail() {
     console.log('sending mail', this.myForm);
     this.disableForm();
     await this.sending();
     this.enableForm();
+    this.resetInputs()
   }
 
 

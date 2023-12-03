@@ -28,3 +28,13 @@ a {
   margin: 0;
   font-size: 46px;
 }
+
+#footer-link-container{
+  display: flex;
+  flex-direction: column;
+
+  & .daniel-link{
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
