@@ -16,8 +16,7 @@ export class DataServiceService {
   public contactPosition: number
   public projectList: Project[]
 
-
-
+  //  fieldStatus.email = emailField.valid; updateAllFieldsValid()
   constructor(public sS: ScrollService) {
 
 

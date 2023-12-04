@@ -21,10 +21,6 @@ export class HeaderComponent {
   @HostListener('window: scroll')
   onscroll() {
     this.setPositions()
-    console.log('aboutme',this.aboutMeposition)
-    console.log('portfolio',this.portfolioPosition)
-    console.log('skills',this.skillsPosition)
-    console.log('skills',this.contactPosition)
   }
   onResize() {
     this.setPositions()
@@ -34,7 +30,7 @@ export class HeaderComponent {
   constructor(private sS: ScrollService, public dS: DataServiceService) {
     this.scrollEvent = this.sS.scrollEvent;
     this.scrollEvent.subscribe((scrollY) => {
-      console.log('aktueller Wert', scrollY)
+
     })
 
   }

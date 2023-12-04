@@ -9,13 +9,17 @@ import { DataServiceService } from '../data-service.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  @ViewChild('myForm') myForm!: NgForm;
+  @ViewChild('myForm') myForm!: ElementRef;
   @ViewChild('nameField') nameField!: NgModel;
   @ViewChild('emailField') emailField!: NgModel;
   @ViewChild('messageField') messageField!: NgModel;
   @ViewChild('contact') contact: ElementRef
 
-  contactPosition
+  contactPosition: number
+  formActive: boolean = false
+  messageSent:boolean
+  emailRegex: RegExp = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\u0022(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\u0022)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
 
   formData = {
     name: '',
@@ -26,12 +30,14 @@ export class ContactComponent implements OnInit {
 
 
   fieldStatus = {
-    name: false,
-    email: false,
-    message: false,
-    privacyPolicy: false,
-    allFieldsValid: false
+    name: undefined,
+    email: undefined,
+    message: undefined,
+    privacyPolicy: undefined,
+    allFieldsValid: undefined,
+
   };
+
 
 
   constructor(public sS: ScrollService, public dS: DataServiceService) {
@@ -42,7 +48,10 @@ export class ContactComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.sendToDataService()
+  }
+
+  activateValidation() {
+    this.formActive = true
   }
 
 
@@ -63,8 +72,10 @@ export class ContactComponent implements OnInit {
   }
 
   updateAllFieldsValid() {
-    // Check if all individual fields are valid
-    this.fieldStatus.allFieldsValid = this.fieldStatus.name && this.fieldStatus.email && this.fieldStatus.message && this.fieldStatus.privacyPolicy;
+    if (this.fieldStatus.name && this.fieldStatus.email && this.fieldStatus.message && this.fieldStatus.privacyPolicy) {
+      this.fieldStatus.allFieldsValid = true
+    } else
+      this.fieldStatus.allFieldsValid = false
   }
 
   resetInputs() {
@@ -82,6 +93,8 @@ export class ContactComponent implements OnInit {
       privacyPolicy: false,
       allFieldsValid: false
     };
+    this.formActive = false
+
   }
 
   async sendMail() {
@@ -90,6 +103,7 @@ export class ContactComponent implements OnInit {
     await this.sending();
     this.enableForm();
     this.resetInputs()
+  
   }
 
 
@@ -125,12 +139,18 @@ export class ContactComponent implements OnInit {
         // Hier kannst du weitere Fehlerbehandlung durchführen
       } else {
         console.log('Mail sent successfully');
-        // Hier kannst du weitere Aktionen nach erfolgreicher Übermittlung durchführen
+        this.messageSent = true
+        setTimeout(() => {
+          this.messageSent = false
+        }, 3000);
+
       }
     } catch (err) {
       console.error('Error:', err);
       // Hier kannst du weitere Fehlerbehandlung durchführen
     }
   }
+
+
 }
 

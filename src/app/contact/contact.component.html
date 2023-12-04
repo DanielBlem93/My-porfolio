@@ -13,62 +13,127 @@
         <p>Need a Frontend developer? Contact me!</p>
       </div>
 
-      <form (submit)="sendMail()" ngNativeValidate #myForm="ngForm">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your name"
-          #nameField="ngModel"
-          [(ngModel)]="formData.name"
-          required
-          (ngModelChange)="
-            fieldStatus.name = nameField.valid; updateAllFieldsValid()
-          "
-        />
-
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Your email"
-          #emailField="ngModel"
-          [(ngModel)]="formData.email"
-          required
-          (ngModelChange)="
-            fieldStatus.email = emailField.valid; updateAllFieldsValid()
-          "
-        />
-
-        <textarea
-          type="text"
-          name="message"
-          placeholder="Your message"
-          #messageField="ngModel"
-          [(ngModel)]="formData.message"
-          required
-          (ngModelChange)="
-            fieldStatus.message = messageField.valid; updateAllFieldsValid()
-          "
-        ></textarea>
-
-        <div id="checkbox-container">
+      <form
+        (submit)="sendMail()"
+        ngNativeValidate
+        #myForm="ngForm"
+        (click)="activateValidation()"
+      >
+        <div class="input-container">
           <input
+            type="text"
+            name="name"
+            placeholder="Your name"
             required
-            type="checkbox"
-            name="privacy policy"
-            id="policy"
-            #policyField="ngModel"
-            [(ngModel)]="formData.privacyPolicy"
+            #nameField="ngModel"
+            [(ngModel)]="formData.name"
+            [ngClass]="{
+              invalid: !fieldStatus.name && formActive,
+              valid: fieldStatus.name
+            }"
             (ngModelChange)="
-              fieldStatus.privacyPolicy = policyField.valid;
+              fieldStatus.name = nameField.valid && nameField.value.length > 2;
               updateAllFieldsValid()
             "
           />
+          <img
+            *ngIf="fieldStatus.name"
+            src="../../assets/img/icons/Frame.svg"
+          />
+          <img
+            *ngIf="!fieldStatus.name && formActive"
+            src="../../assets/img/icons/invaild.svg"
+          />
+        </div>
 
-          <p>
-            I've read the <a class="policy-link" href="">privacy policy</a> and
-            agree to the processing of my data as outlined.
-          </p>
+        <div class="input-container">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email"
+            #emailField="ngModel"
+            required
+            [(ngModel)]="formData.email"
+            [pattern]="emailRegex"
+            [ngClass]="{
+              invalid: !fieldStatus.email && formActive,
+              valid: fieldStatus.email
+            }"
+            (ngModelChange)="
+              fieldStatus.email =
+                emailField.valid && emailField.value.length > 1;
+              updateAllFieldsValid()
+            "
+          />
+          <img
+            *ngIf="fieldStatus.email"
+            src="../../assets/img/icons/Frame.svg"
+          />
+          <img
+            *ngIf="!fieldStatus.email && formActive"
+            src="../../assets/img/icons/invaild.svg"
+          />
+        </div>
+
+        <div class="input-container">
+          <textarea
+            type="text"
+            name="message"
+            placeholder="Your message"
+            #messageField="ngModel"
+            required
+            [(ngModel)]="formData.message"
+            [ngClass]="{
+              invalid: !fieldStatus.message && formActive,
+              valid: fieldStatus.message
+            }"
+            (ngModelChange)="
+              fieldStatus.message =
+                messageField.valid && messageField.value.length > 5;
+              updateAllFieldsValid()
+            "
+          ></textarea>
+          <img
+            *ngIf="fieldStatus.message"
+            src="../../assets/img/icons/Frame.svg"
+          />
+          <img
+            *ngIf="!fieldStatus.message && formActive"
+            src="../../assets/img/icons/invaild.svg"
+          />
+        </div>
+        <div class="input-container">
+          <div id="checkbox-container">
+            <input
+              required
+              type="checkbox"
+              name="privacy policy"
+              id="policy"
+              #policyField="ngModel"
+              [(ngModel)]="formData.privacyPolicy"
+              (ngModelChange)="
+                fieldStatus.privacyPolicy = policyField.valid;
+                updateAllFieldsValid()
+              "
+            />
+
+            <p>
+              I've read the
+              <a class="policy-link" href="">privacy policy</a> and agree to the
+              processing of my data as outlined.
+            </p>
+
+            <img
+              *ngIf="fieldStatus.privacyPolicy"
+              src="../../assets/img/icons/Frame.svg"
+            />
+
+            <img
+              *ngIf="!fieldStatus.privacyPolicy && formActive"
+              src="../../assets/img/icons/invaild.svg"
+            />
+          </div>
         </div>
 
         <button
@@ -90,6 +155,9 @@
           alt="Up Page Arrow"
         />
       </form>
+    </div>
+    <div *ngIf="messageSent" class="confirmation-message">
+      Message has been sent successfully!
     </div>
   </div>
 </section>
