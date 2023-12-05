@@ -150,11 +150,13 @@ input[type="checkbox"] {
 }
 
 .pageUp {
+  position: absolute;
   width: 40px;
   height: 40px;
   align-self: flex-end;
   cursor: pointer;
-  margin-top: 50px;
+  right: 7.1%;
+  bottom: -128px;
 }
 
 .confirmation-message{
@@ -162,4 +164,9 @@ input[type="checkbox"] {
   font-size: 24px;
   text-align: center;
   transition: 300ms ease-in ;
+}
+
+.accept{
+  color: red;
+  font-style: italic;
 }

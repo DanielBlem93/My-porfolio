@@ -1,8 +1,12 @@
 <header>
   <div id="header-container">
-    <a class="daniel-link" href="#">  <p class="daniel">Dan<span class="i">i</span>e<span class="l">l</span></p></a>
-  
-    <nav>
+    <a class="daniel-link" href="#">
+      <p class="daniel">
+        Dan<span class="i">i</span>e<span class="l">l</span>
+      </p></a
+    >
+
+    <nav id="nav-desktop">
       <a
         class="navLinks"
         href="#about-me"
@@ -14,7 +18,7 @@
       >
       <a
         class="navLinks"
-        href="#skills"
+        href="#skills-app"
         [class.active]="
           (scrollEvent | async) > dS.skillsPosition - dS.skillsHight &&
           (scrollEvent | async) < dS.portfolioPosition - dS.skillsHight
@@ -26,10 +30,41 @@
         href="#portfolio"
         [class.active]="
           (scrollEvent | async) >= dS.portfolioPosition - dS.skillsHight &&
-          (scrollEvent | async) < contactPosition + dS.portfolioHight 
+          (scrollEvent | async) < contactPosition + dS.portfolioHight
         "
         >Portfolio</a
       >
+    </nav>
+
+    <nav id="nav-mobile" style="display: none">
+      <div id="burger-menu-container">
+        <img
+          (click)="toggleMenu()"
+          class="menu-icon"
+          *ngIf="isMenuOpen"
+          [src]="animationImages[1]"
+          alt="Menü geöffnet"
+        />
+        <img
+          (click)="toggleMenu()"
+          *ngIf="!isMenuOpen"
+          [src]="animationImages[0]"
+          src="geschlossenes-menü-bild.svg"
+          alt="Menü geschlossen"
+        />
+      </div>
+      <div *ngIf="isMenuOpen" id="nav-menu" style="display: flex">
+        <div class="links-container">
+          <a (click)="toggleMenu()" class="navLinks" href="#about-me"
+            >About me</a
+          >
+          <a (click)="toggleMenu()" class="navLinks" href="#skills-app">Skills</a>
+          <a (click)="toggleMenu()" class="navLinks" href="#portfolio"
+            >Portfolio</a
+          >
+          <a (click)="toggleMenu()" class="navLinks" href="#contact">Contact</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>

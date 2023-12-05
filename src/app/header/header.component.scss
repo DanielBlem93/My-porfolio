@@ -3,6 +3,7 @@ header {
   top: 0;
   display: flex;
   justify-content: center;
+
   width: 100vw;
   z-index: 20;
   height: 109px;
@@ -18,6 +19,7 @@ header {
 
 nav {
   display: flex;
+
   gap: 29px;
   & a {
     color: white;
@@ -35,6 +37,62 @@ nav {
     text-underline-offset: 10px;
   }
 }
+#burger-menu-container {
+  position: relative;
 
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  & img {
+    transition: opacity 0.5s ease-in-out;
+  }
 
+  & img:first-child {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1060px) {
+  #nav-desktop {
+    display: none;
+  }
+
+  .menu-icon {
+    position: absolute;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    z-index: 10;
+  }
+
+  #nav-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #nav-menu {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darkBlueTransparant);
+    z-index: 9;
+  }
+
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+  }
+
+  
+}
 
