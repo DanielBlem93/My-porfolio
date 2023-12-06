@@ -9,7 +9,7 @@
 }
 
 #intro-container {
-  height: 100vh;
+  height: 100%;
   width: var(--mainMargin);
   display: flex;
   align-items: center;
@@ -19,13 +19,14 @@
 #me-container {
   position: relative;
   margin-top: 240px;
+  height: 100%;
 }
 
 .shape1 {
   position: absolute;
-  top: 305px;
-  right: 0;
-  width: 100%;
+  top: -426px;
+  left: 0;
+  width: 3960px;
   z-index: 2;
 }
 .shape-mobile1 {
@@ -37,7 +38,7 @@
   position: relative;
 
   z-index: 1;
-  height: 1000px;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -54,7 +55,7 @@
   align-items: center;
   z-index: 10;
   flex-direction: column;
-  bottom: 190px;
+  bottom: 100px;
 }
 
 .text-container {
@@ -134,25 +135,10 @@
 }
 
 @media (max-width: 1850px) {
-  .shape1 {
-    top: 260px;
-  }
 }
 @media (max-width: 1650px) {
-  .shape1 {
-  }
-  #me {
-    height: 800px;
-  }
 }
 @media (max-width: 1500px) {
-  #me {
-  }
-
-  .shape1 {
-    top: 320px;
-  }
-
   #references-line {
     top: 625px;
   }
@@ -179,20 +165,29 @@
 }
 
 @media (max-width: 1160px) {
-  .shape1 {
-    top: 300px;
-  }
 }
+
 @media (max-width: 1060px) {
   #intro {
-    margin-top: 0px;
+    margin-top: 100px;
     height: 100vh;
   }
   #intro-container {
     height: 100%;
     width: 100%;
     flex-direction: column;
-    gap: 42px;
+    justify-content: unset;
+  }
+
+  #introduceing-container {
+    bottom: 400px;
+  }
+
+  #me-container {
+    margin-top: 0;
+  }
+  #me {
+    height: 70%;
   }
 
   .shape1 {
@@ -201,7 +196,7 @@
   .shape-mobile1 {
     display: unset !important;
     position: absolute;
-    top: -700px;
+    top: -729px;
     width: 1100px;
     z-index: 2;
   }
@@ -216,7 +211,7 @@
   }
 
   .line {
-    width: 64px;
+    width: 32px;
   }
   .mail {
     display: none !important;
@@ -224,11 +219,6 @@
 
   .scroll-down {
     display: none !important;
-  }
-
-  #me {
-    height: 700px;
-    top: 0px;
   }
 }
 

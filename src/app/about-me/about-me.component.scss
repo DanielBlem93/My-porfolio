@@ -22,7 +22,6 @@
 
   & h1 {
     font-size: 90px;
-
   }
 }
 
@@ -92,7 +91,6 @@
 @media (max-width: 1650px) {
 }
 @media (max-width: 1500px) {
-
   #about-me-container {
     align-items: center;
   }
@@ -118,29 +116,31 @@
 }
 
 @media (max-width: 1333px) {
-
-  
   #about-me-text-container {
     width: 60%;
   }
-
 
   #circle-pic-container {
     right: -200px;
   }
 }
 @media (max-width: 1160px) {
-
-
   #circle-pic-container {
     right: -250px;
   }
-
-  
 }
 @media (max-width: 1060px) {
-  #about-me-container{
+  #about-me-container {
     margin-top: 0;
+    justify-content: center;
+    width: 100%;
+  }
+  #about-me-text-container {
+    width: 80%;
+    z-index: 3;
+  }
+  #circle-pic-container {
+    display: none;
   }
 }
 

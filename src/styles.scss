@@ -226,3 +226,11 @@ body {
 ::-webkit-scrollbar-track {
   background-color: var(--darkBlue);
 }
+
+@media(max-width: 768px){
+  h1{
+    font-size: 45px !important;
+  }
+
+
+}
