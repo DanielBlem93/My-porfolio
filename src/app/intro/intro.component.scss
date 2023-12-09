@@ -24,9 +24,10 @@
 
 .shape1 {
   position: absolute;
-  top: -426px;
-  left: 0;
-  width: 3960px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 100vw;
   z-index: 2;
 }
 .shape-mobile1 {
@@ -34,8 +35,10 @@
 }
 
 #me {
-  // transform: rotate(4deg);
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   z-index: 1;
   height: 100%;
@@ -44,8 +47,8 @@
 
 .green-purple-shadow {
   position: absolute;
-  top: 170px;
-  left: -200px;
+  top: 29px;
+  left: -420px;
   z-index: 0;
 }
 
@@ -111,12 +114,14 @@
 }
 
 .scrollDown {
+  height: 165px;
   font-size: 23px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   margin-right: 64px;
   writing-mode: vertical-rl;
+
   & svg {
     fill: white;
     transition: 125ms ease-in;
@@ -139,6 +144,12 @@
 @media (max-width: 1650px) {
 }
 @media (max-width: 1500px) {
+  .shape1 {
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%, -26%);
+  }
+
   #references-line {
     top: 625px;
   }
@@ -165,54 +176,31 @@
 }
 
 @media (max-width: 1160px) {
+  .shape1 {
+    top: 78%;
+
+    transform: translate(-50%, -22%);
+  }
+
+  #me {
+    height: 80%;
+  }
 }
 
 @media (max-width: 1060px) {
-  #intro {
-    margin-top: 100px;
-    height: 100vh;
-  }
-  #intro-container {
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: unset;
-  }
 
-  #introduceing-container {
-    bottom: 400px;
-  }
-
-  #me-container {
-    margin-top: 0;
+  #intro-container{
+    justify-content: space-between;
   }
   #me {
-    height: 70%;
+    height: 80%;
+    left: 95%;
+    transform: translate(-5%, -50%);
   }
-
-  .shape1 {
-    display: none !important;
-  }
-  .shape-mobile1 {
-    display: unset !important;
-    position: absolute;
-    top: -729px;
-    width: 1100px;
-    z-index: 2;
-  }
-
   .button-green {
     margin-top: 16px;
   }
 
-  #references-line {
-    position: absolute;
-    bottom: 108px;
-  }
-
-  .line {
-    width: 32px;
-  }
   .mail {
     display: none !important;
   }
@@ -222,11 +210,8 @@
   }
 }
 
-// @media (max-width: 1014px){
-//   .shape-mobile1 {
-//     top: -60%;
-//   }
-// }
+@media (max-height: 650px) {
+}
 // @media (max-width: 972px){
 //   .shape-mobile1 {
 //     top: -55%;
