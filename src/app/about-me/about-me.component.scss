@@ -36,6 +36,9 @@
     height: 50px;
     padding: 2px;
   }
+  & h2 {
+    font-size: 90px;
+  }
 }
 
 .text-container {
@@ -143,20 +146,13 @@
     display: none;
   }
 }
+@media (max-width: 768px) {
+  #about-me-text-container {
+    & h2 {
+      margin-top: 70px;
+      margin-bottom: 16px;
+      font-size: 45px;
+    }
+  }
+}
 
-// @media (max-width: 1850px) {
-
-// }
-// @media (max-width: 1650px) {
-
-// }
-// @media (max-width: 1500px) {
-
-// }
-
-// @media (max-width: 1160px) {
-
-// }
-// @media (max-width: 1060px) {
-
-// }

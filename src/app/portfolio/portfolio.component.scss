@@ -118,4 +118,53 @@
 @media (max-width: 1160px) {
 }
 @media (max-width: 1060px) {
+  .projekts-container {
+    & img {
+      width: 55%;
+    }
+  }
+
+  .buttons-container {
+    gap: 43px;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  #portfolio {
+    gap: 16px;
+  }
+
+  .portfolio-description{
+    width: 90%;
+  }
+
+  #portfolio-container{
+    gap: 35px;
+  }
+
+  .projekt-description {
+    width: 90%;
+  }
+  #headline-container {
+    & h1 {
+      font-size: 45px;
+    }
+  }
+
+  .projekts-container {
+    width: 100%;
+    flex-direction: column;
+    & img {
+      width: 90%;
+    }
+    &:nth-of-type(even) {
+      flex-direction: column;
+    }
+  }
+
+  .buttons-container {
+    justify-content: space-between;
+  }
 }

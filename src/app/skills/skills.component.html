@@ -1,6 +1,7 @@
 <section id="skills" #skills>
-<img class="shape3" src="../../assets/img/shape3.svg" alt="">
+  <img class="shape3" src="../../assets/img/shape3.svg" alt="" />
   <div id="skills-container">
+    <button class="button-green skills-button skills-button-mobile">Get in touch</button>
     <div class="skill-icons-container">
       <div class="skill-icons" *ngFor="let imageUrl of imageUrls">
         <img class="skill-icon" [src]="imageUrl" alt="Icon" />
@@ -8,16 +9,23 @@
       </div>
     </div>
 
+
+
     <div id="my-skills-container">
       <div id="skills-text">
-        <h1>My skills</h1>
-        <p>
-          I have gained experience in building projects with various front end
-          technologies and concepts.
-        </p>
+        <div class="headline-container">
+          <h1>My skills</h1>
+
+          <p>
+            I have gained experience in building projects with various front end
+            technologies and concepts.
+          </p>
+        </div>
+        <div style="display: none" class="skills-line skills-line-mobile"></div>
       </div>
-          <div id="skills-line"></div>
+      <div class="skills-line"></div>
       <button class="button-green skills-button">Get in touch</button>
     </div>
+    
   </div>
 </section>

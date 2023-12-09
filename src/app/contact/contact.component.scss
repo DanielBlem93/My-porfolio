@@ -6,6 +6,7 @@
   align-items: center;
   width: 100vw;
   z-index: 3;
+  margin-top:128px ;
 }
 
 #contact-container {
@@ -16,16 +17,18 @@
 
   & h2 {
     font-size: 90px;
+    margin-top: 64px;
   }
 }
 .small-line-contact {
   position: absolute;
-  top: 142px;
+  top: 132px;
   left: 0;
   height: 4px;
   width: 60px;
   background-color: var(--purple);
   z-index: 5;
+  border-radius: 4px;
 }
 
 #form-container {
@@ -119,7 +122,8 @@ textarea {
 textarea {
   height: 200px;
   min-height: 50px;
-  min-width: fit-content;
+  min-width: 90%;
+  max-height: 500px;
   &:focus {
     outline: none;
     border: 1px solid var(--green);
@@ -159,14 +163,63 @@ input[type="checkbox"] {
   bottom: -128px;
 }
 
-.confirmation-message{
+.confirmation-message {
   color: var(--green);
   font-size: 24px;
   text-align: center;
-  transition: 300ms ease-in ;
+  transition: 300ms ease-in;
 }
 
-.accept{
+.accept {
   color: red;
   font-style: italic;
+}
+
+@media (max-width: 1060px) {
+
+  #contact-container{
+    
+  }
+  .text-container{
+    width: 40%;
+  }
+
+  form{
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+
+  #contact-container{
+    width: 90%;
+
+    & h2 {
+      font-size: 45px;
+      margin-bottom: 0;
+    }
+  }
+  #form-container{
+    flex-direction: inherit;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .text-container{
+    width: 100%;
+  }
+
+  form{
+    width: 100%;
+  }
+  .button-grey{
+    align-self: center;
+  }
+  .button-valid{
+    align-self: center;
+  }
+
+  .small-line-contact{
+    top: 96px;
+    left: -40px;
+  }
 }

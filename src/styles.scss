@@ -228,6 +228,10 @@ body {
 }
 
 @media(max-width: 768px){
+
+  :root{
+    --mainMargin: 90%;
+  }
   h1{
     font-size: 45px !important;
   }
