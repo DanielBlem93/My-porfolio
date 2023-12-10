@@ -1,7 +1,7 @@
 <section id="skills" #skills>
   <img class="shape3" src="../../assets/img/shape3.svg" alt="" />
   <div id="skills-container">
-    <button class="button-green skills-button skills-button-mobile">Get in touch</button>
+    <button onclick="window.location.href='#contact'" class="button-green skills-button skills-button-mobile">Get in touch</button>
     <div class="skill-icons-container">
       <div class="skill-icons" *ngFor="let imageUrl of imageUrls">
         <img class="skill-icon" [src]="imageUrl" alt="Icon" />
@@ -24,7 +24,7 @@
         <div style="display: none" class="skills-line skills-line-mobile"></div>
       </div>
       <div class="skills-line"></div>
-      <button class="button-green skills-button">Get in touch</button>
+      <button onclick="window.location.href='#contact'" class="button-green skills-button">Get in touch</button>
     </div>
     
   </div>

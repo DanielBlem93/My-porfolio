@@ -126,8 +126,7 @@
 @media (max-width: 1060px) {
 }
 @media (max-width: 768px) {
-  #skills-container {
-  }
+ 
 
   #skills-text {
     flex-direction: row;
@@ -172,5 +171,20 @@
   }
   .skills-button-mobile {
     display: unset !important;
+    z-index: 9;
+  }
+}
+
+@media(max-width:500px){
+  #skills{
+    margin-top: 100px;
+  }
+
+  .skill-icons-container{
+    gap: 32px;
+  }
+
+  #my-skills-container   p{
+    width: 80%;
   }
 }
