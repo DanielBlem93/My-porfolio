@@ -1,6 +1,4 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { ScrollService } from '../scroll.service';
-import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-skills',
@@ -35,43 +33,11 @@ export class SkillsComponent {
     return fileNameWithoutExtension || '';
   }
 
-  constructor(private sS: ScrollService, private dS: DataServiceService) {
-
-  }
-
-  ngOnInit(): void {
+  constructor() {
 
   }
 
 
-  ngAfterViewInit(): void {
-    this.sendToDataService()
-
-  }
-
-  @HostListener('window:resize')
-  onResize() {
-    this.sendToDataService()
-  }
-
-
-  sendToDataService() {
-    this.getElementHight()
-    this.getSkillsPosition()
-  }
-
-
-  getElementHight() {
-    let height = this.skills.nativeElement.offsetHeight
-    this.elementHight = height
-    this.dS.skillsHight = this.elementHight
-    console.log('skills height:', height)
-  }
-
-  getSkillsPosition() {
-    this.skillsPosition = this.sS.getElementPosition(this.skills)
-    this.dS.skillsPosition = this.skillsPosition
-  }
 
 
 

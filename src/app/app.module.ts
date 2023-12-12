@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ProjektComponent } from './projekt/projekt.component';
 import { ContactComponent } from './contact/ContactComponent';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +21,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutMeComponent,
     SkillsComponent,
     PortfolioComponent,
-    ProjektComponent,
     ContactComponent,
     FooterComponent,
 

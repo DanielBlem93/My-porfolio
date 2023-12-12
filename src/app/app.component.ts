@@ -1,5 +1,4 @@
 import { Component, Renderer2, ElementRef, HostListener, ViewChild, OnInit } from '@angular/core';
-import { ScrollService } from './scroll.service';
 import { NavigationEnd, NavigationStart } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -8,33 +7,14 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'portfolio';
 
 
 
 
 
-  constructor(public sS: ScrollService, public router: Router) { }
+  constructor(public router: Router) { }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-
-    window.scrollTo(0, 0)
-
-  }
-
-  ngOnInit() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
-      }
-    });
-
-    // Deaktiviere die Scroll-Wiederherstellung des Browsers
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-  }
 
 }

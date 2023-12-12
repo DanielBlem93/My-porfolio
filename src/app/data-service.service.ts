@@ -1,6 +1,6 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { Project } from './project.interface';
-import { ScrollService } from './scroll.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class DataServiceService {
   public projectList: Project[]
 
 
-  constructor(public sS: ScrollService) {
+  constructor() {
 
 
     this.projectList = [

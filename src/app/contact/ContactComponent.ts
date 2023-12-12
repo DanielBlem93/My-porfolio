@@ -1,6 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
-import { ScrollService } from '../scroll.service';
 import { DataServiceService } from '../data-service.service';
 import { ViewportScroller } from '@angular/common';
 
@@ -43,40 +42,8 @@ export class ContactComponent {
 
 
 
-  constructor(public sS: ScrollService, public dS: DataServiceService, private viewportScroller: ViewportScroller) {
+  constructor(public dS: DataServiceService, private viewportScroller: ViewportScroller) {
   }
-  ngAfterViewInit(): void {
-    this.sendToDataService()
-
-  }
-
-  @HostListener('window:resize')
-  onResize() {
-    this.sendToDataService()
-    console.log('contact height:', this.elementHight)
-  }
-
-
-  sendToDataService() {
-    this.getContactPosition()
-    this.getElementHight()
-  }
-
-  getElementHight() {
-    let height = this.contact.nativeElement.offsetHeight
-    if (height <= 0) {
-      height = 0
-    }
-    this.elementHight = height
-    this.dS.contactHight = this.elementHight
-    console.log('contact height:', height)
-  }
-
-  getContactPosition() {
-    this.contactPosition = this.sS.getElementPosition(this.contact)
-    this.dS.contactPosition = this.contactPosition
-  }
-
 
   async sendMail() {
     this.disableForm();

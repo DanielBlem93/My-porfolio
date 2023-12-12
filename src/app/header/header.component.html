@@ -10,28 +10,16 @@
       <a
         class="navLinks"
         href="#about-me"
-        [class.active]="
-          (scrollEvent | async) >= dS.aboutMeposition - dS.aboutMeHight &&
-          (scrollEvent | async) < skillsPosition - dS.skillsHight
-        "
         >About me</a
       >
       <a
         class="navLinks"
         href="#skills-app"
-        [class.active]="
-          (scrollEvent | async) > dS.skillsPosition - dS.skillsHight &&
-          (scrollEvent | async) < dS.portfolioPosition - dS.skillsHight
-        "
         >Skills</a
       >
       <a
         class="navLinks"
         href="#portfolio"
-        [class.active]="
-          (scrollEvent | async) >= dS.portfolioPosition - dS.skillsHight &&
-          (scrollEvent | async) < contactPosition  + dS.contactHight
-        "
         >Portfolio</a
       >
     </nav>
