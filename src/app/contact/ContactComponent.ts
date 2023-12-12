@@ -16,7 +16,9 @@ export class ContactComponent {
   @ViewChild('messageField') messageField!: NgModel;
   @ViewChild('contact') contact!: ElementRef
 
+
   contactPosition!: number
+  elementHight: number
   formActive: boolean = false
   messageSent!: boolean
   emailRegex: RegExp = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\u0022(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\u0022)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
@@ -43,18 +45,32 @@ export class ContactComponent {
 
   constructor(public sS: ScrollService, public dS: DataServiceService, private viewportScroller: ViewportScroller) {
   }
+  ngAfterViewInit(): void {
+    this.sendToDataService()
 
+  }
 
   @HostListener('window:resize')
   onResize() {
     this.sendToDataService()
+    console.log('contact height:', this.elementHight)
   }
 
 
   sendToDataService() {
     this.getContactPosition()
+    this.getElementHight()
   }
 
+  getElementHight() {
+    let height = this.contact.nativeElement.offsetHeight
+    if (height <= 0) {
+      height = 0
+    }
+    this.elementHight = height
+    this.dS.contactHight = this.elementHight
+    console.log('contact height:', height)
+  }
 
   getContactPosition() {
     this.contactPosition = this.sS.getElementPosition(this.contact)

@@ -15,39 +15,26 @@ export class AppComponent implements OnInit {
 
 
 
-  constructor(public sS: ScrollService, public router: Router) {
-
-
-  }
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event: Event) {
-
-  }
+  constructor(public sS: ScrollService, public router: Router) { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
 
-    // window.scrollTo(0, 0)
-
-
-  }
-
-
-
-  ngAfterViewInit() {
+    window.scrollTo(0, 0)
 
   }
+
   ngOnInit() {
-    // this.router.events.subscribe((event) => {
-    //   if (event instanceof NavigationEnd) {
-    //     window.scrollTo(0, 0);
-    //   }
-    // });
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
 
-    // // Deaktiviere die Scroll-Wiederherstellung des Browsers
-    // if ('scrollRestoration' in history) {
-    //   history.scrollRestoration = 'manual';
-    // }
+    // Deaktiviere die Scroll-Wiederherstellung des Browsers
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
   }
 
 }

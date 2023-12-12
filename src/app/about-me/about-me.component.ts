@@ -9,7 +9,7 @@ import { DataServiceService } from '../data-service.service';
 
 
 
-export class AboutMeComponent implements OnInit {
+export class AboutMeComponent {
   elementHight: number
   aboutMePosition: number
   active: boolean
@@ -26,7 +26,7 @@ export class AboutMeComponent implements OnInit {
     this.sendToDataService()
   }
 
-  ngOnInit(): void { }
+
 
 
   @HostListener('window:resize')

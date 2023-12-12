@@ -21,7 +21,7 @@
   gap: 123px;
   z-index: 5;
 }
-.skills-button-mobile{
+.skills-button-mobile {
   display: none;
 }
 .skill-icons {
@@ -126,8 +126,6 @@
 @media (max-width: 1060px) {
 }
 @media (max-width: 768px) {
- 
-
   #skills-text {
     flex-direction: row;
     gap: unset;
@@ -175,16 +173,16 @@
   }
 }
 
-@media(max-width:500px){
-  #skills{
+@media (max-width: 500px) {
+  #skills {
     margin-top: 100px;
   }
 
-  .skill-icons-container{
+  .skill-icons-container {
     gap: 32px;
   }
 
-  #my-skills-container   p{
+  #my-skills-container p {
     width: 80%;
   }
 }

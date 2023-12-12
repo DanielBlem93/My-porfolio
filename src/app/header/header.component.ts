@@ -33,6 +33,7 @@ export class HeaderComponent {
     this.scrollEvent = this.sS.scrollEvent;
     this.scrollEvent.subscribe
 
+
   }
 
   setPositions() {

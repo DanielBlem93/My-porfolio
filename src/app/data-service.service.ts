@@ -14,6 +14,7 @@ export class DataServiceService {
   public portfolioPosition: number
   public portfolioHight: number
   public contactPosition: number
+  public contactHight: number
   public projectList: Project[]
 
 
