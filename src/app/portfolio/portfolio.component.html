@@ -1,4 +1,6 @@
 <section id="portfolio" #portfolio>
+  <img class="shape4" src="../../assets/img/shape4.svg">
+  <img class="shape5" src="../../assets/img/shape5.svg">
   <div id="headline-container">
     <div style="opacity: 0" class="long-line"></div>
     <div class="flex-container">
@@ -9,10 +11,11 @@
       </div>
     </div>
   </div>
-  <span class="portfolio-description" style="text-align: center"
+  <span class="portfolio-description"
     >This page is a sample of my work - please feel free to try them out.</span
   >
   <div id="portfolio-container">
+
     <div
       class="projekts-container"
       *ngFor="let project of dS.projectList; let i = index"
@@ -40,5 +43,6 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>

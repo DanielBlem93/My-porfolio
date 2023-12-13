@@ -85,6 +85,9 @@ nav {
     height: 100vh;
     background-color: var(--darkBlueTransparant);
     z-index: 9;
+    transform: translateX(105vw);
+    transition: 325ms ease-in-out;
+    opacity: 0;
   }
 
   .links-container {

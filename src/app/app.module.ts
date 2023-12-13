@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/ContactComponent';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PortfolioComponent,
     ContactComponent,
     FooterComponent,
+    ImpressumComponent,
 
 
   ],

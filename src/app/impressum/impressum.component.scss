@@ -1,0 +1,16 @@
+#impressum {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  margin-top: 100px;
+  flex-direction: column;
+}
+.impressum {
+  width: 80%;
+  & a {
+    text-decoration: none;
+    color: var(--purple);
+  }
+}

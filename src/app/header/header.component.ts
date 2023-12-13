@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -21,13 +22,11 @@ export class HeaderComponent {
   @HostListener('window: resize')
   onResize() {
     this.isMenuOpen = false;
+    this.toggleNav('translateX(105vw)', '0')
   }
 
 
-  constructor(public dS: DataServiceService) {
-
-  }
-
+  constructor(public dS: DataServiceService) {}
 
 
   animationImages = [
@@ -35,14 +34,26 @@ export class HeaderComponent {
     '../../assets/img/icons/burgermenu4.svg',
   ];
 
+
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
 
     if (this.isMenuOpen) {
+  
+      this.toggleNav( 'translateX(105vw)', '0')
       document.body.style.overflow = 'hidden';
     } else {
+      this.toggleNav( 'translateX(0)','1')
       document.body.style.overflow = 'auto';
       document.body.style.overflowX = 'hidden';
     }
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+
+  toggleNav( width: string, opacity:string) {
+    let nav = document.getElementById('nav-menu');
+    nav.style.opacity = opacity
+    nav.style.transform = width;
+
   }
 }

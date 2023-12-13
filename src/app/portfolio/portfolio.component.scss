@@ -8,6 +8,10 @@
   z-index: 3;
 }
 
+.portfolio-description {
+  text-align: center;
+}
+
 #portfolio-container {
   display: flex;
   flex-direction: column;
@@ -48,7 +52,21 @@
   background-color: var(--purple);
 }
 
+.shape4 {
+  position: absolute;
+  right: -512px;
+  top: 265px;
+  z-index: 0;
+}
+.shape5 {
+  position: absolute;
+  left: -512px;
+  bottom: 265px;
+  z-index: 0;
+}
+
 .projekts-container {
+  z-index: 1;
   display: flex;
 
   align-items: center;
@@ -130,17 +148,15 @@
 }
 
 @media (max-width: 768px) {
-
-
   #portfolio {
     gap: 16px;
   }
 
-  .portfolio-description{
+  .portfolio-description {
     width: 90%;
   }
 
-  #portfolio-container{
+  #portfolio-container {
     gap: 35px;
   }
 
