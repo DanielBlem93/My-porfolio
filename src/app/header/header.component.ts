@@ -1,6 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { DataServiceService } from '../data-service.service';
-import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -11,11 +10,6 @@ import { Observable } from 'rxjs';
 
 
 export class HeaderComponent {
-  aboutMeposition: number
-  skillsPosition: number
-  portfolioPosition: number
-  contactPosition: number
-  scrollEvent: Observable<number>;
   isMenuOpen = false;
 
 
@@ -26,7 +20,7 @@ export class HeaderComponent {
   }
 
 
-  constructor(public dS: DataServiceService) {}
+  constructor() {}
 
 
   animationImages = [

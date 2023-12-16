@@ -6,11 +6,14 @@
   width: 100vw;
   gap: 100px;
   z-index: 3;
+  overflow: hidden;
 }
 #shape2 {
+  top: -141px;
   position: absolute;
-  right: -550px;
+  right: -483px;
   transform: scaleX(-1) scaleY(-1) rotate(150deg);
+  transform: scale(0.6);
 }
 
 #about-me-container {

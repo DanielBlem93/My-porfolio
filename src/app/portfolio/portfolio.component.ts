@@ -1,34 +1,38 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { DataServiceService } from '../data-service.service';
 import { Project } from '../project.interface';
 
+/**
+ * Component for displaying a portfolio of projects.
+ */
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-
-
 export class PortfolioComponent {
-  portfolioPosition: number
-  elementHight: number
-  projectList: Project
 
+  /** List of projects for the portfolio. */
+  projectList: Project;
 
-  constructor(private router: Router,
-    public dS: DataServiceService) {
+  /**
+   * Constructor for PortfolioComponent.
+   * @param router - The Angular router service.
+   * @param dS - The data service for managing project data.
+   */
+  constructor(private router: Router, public dS: DataServiceService) {}
 
-  }
-  @ViewChild('portfolio') portfolio: ElementRef
+  /** Reference to the portfolio element. */
+  @ViewChild('portfolio') portfolio: ElementRef;
 
-
+  /**
+   * Redirects to the project's URL in a new tab.
+   * @param projectUrl - The URL of the project.
+   */
   redirectToProject(projectUrl: string): void {
     window.open(projectUrl, '_blank');
   }
-
-
-
 
 }

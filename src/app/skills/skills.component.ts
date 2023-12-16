@@ -1,16 +1,18 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
+/**
+ * Component for displaying skills with corresponding icons.
+ */
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent {
-  @ViewChild('skills') skills: ElementRef
+  /** Reference to the skills element. */
+  @ViewChild('skills') skills: ElementRef;
 
-  elementHight: number;
-  skillsPosition: number
-
+  /** Array of image URLs representing skills icons. */
   imageUrls: string[] = [
     '/assets/img/icons/Angular.svg',
     '/assets/img/icons/TypeScript.svg',
@@ -23,22 +25,16 @@ export class SkillsComponent {
     '/assets/img/icons/Rest-Api.svg',
     '/assets/img/icons/Scrum.svg',
     '/assets/img/icons/Material Design.svg',
+  ];
 
-  ]
-
-  getFileName(url: string) {
-    // Extrahiere den Dateinamen und entferne die Dateiendung
-    const fileNameWithExtension = url.split('/').pop(); // Letztes Element nach dem Split
+  /**
+   * Extracts the file name without extension from a given URL.
+   * @param url - The URL of the file.
+   * @returns The file name without extension.
+   */
+  getFileName(url: string): string {
+    const fileNameWithExtension = url.split('/').pop(); 
     const fileNameWithoutExtension = fileNameWithExtension?.split('.')[0];
     return fileNameWithoutExtension || '';
   }
-
-  constructor() {
-
-  }
-
-
-
-
-
 }

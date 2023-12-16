@@ -33,6 +33,8 @@
 
   // Margin or the left and right side on the page
   --mainMargin: 85%;
+
+  
 }
 
 * {
@@ -45,10 +47,9 @@ body {
   display: flex;
   justify-content: center;
   background-color: #141d2f;
-  height: 100vh;
-  width: 100%;
-  color: white;
   overflow-x: hidden;
+
+  color: white;
 }
 
 
