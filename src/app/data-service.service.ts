@@ -23,7 +23,7 @@ export class DataServiceService {
         description: 'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the giant Chicken.',
         technologies: ['JavaScript', 'HTML', 'CSS'],
         githubLink: 'https://github.com/DanielBlem93/el-pollo-loco',
-        projectUrl: 'https://project1.com',
+        projectUrl: 'https://daniel-blem.de/el-pollo-loco/index.html',
       },
       {
         name: 'Join',
@@ -31,7 +31,7 @@ export class DataServiceService {
         description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
         technologies: ['JavaScript', 'HTML', 'CSS'],
         githubLink: 'https://github.com/DanielBlem93/join',
-        projectUrl: 'https://project1.com'
+        projectUrl: 'https://daniel-blem.de/join/index.html'
       },
       {
         name: 'El Pollo loco',
@@ -39,7 +39,7 @@ export class DataServiceService {
         description: 'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the giant Chicken.',
         technologies: ['JavaScript', 'HTML', 'CSS'],
         githubLink: 'https://github.com/DanielBlem93/el-pollo-loco',
-        projectUrl: 'https://project1.com',
+        projectUrl: 'https://daniel-blem.de/el-pollo-loco/index.html',
       },
       {
         name: 'Join',
@@ -47,7 +47,7 @@ export class DataServiceService {
         description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
         technologies: ['JavaScript', 'HTML', 'CSS'],
         githubLink: 'https://github.com/DanielBlem93/join',
-        projectUrl: 'https://project1.com'
+        projectUrl: 'https://daniel-blem.de/join/index.html'
       },
 
     ];
