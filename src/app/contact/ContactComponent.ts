@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
-
+import Aos from 'aos';
 /**
  * Contact Component for handling contact form functionality.
  */
@@ -9,7 +9,7 @@ import { NgForm, NgModel } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit{
   /** Reference to the form element. */
   @ViewChild('myForm') myForm!: ElementRef;
   /** Reference to the name input field. */
@@ -44,6 +44,10 @@ export class ContactComponent {
     privacyPolicy: false,
     allFieldsValid: false
   };
+
+  ngOnInit(): void {
+    Aos.init()
+  }
 
   /**
    * Asynchronously sends mail, disables form during the process,

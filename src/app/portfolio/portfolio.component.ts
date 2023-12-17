@@ -1,8 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { DataServiceService } from '../data-service.service';
 import { Project } from '../project.interface';
+import Aos from 'aos';
 
 /**
  * Component for displaying a portfolio of projects.
@@ -12,8 +13,11 @@ import { Project } from '../project.interface';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit {
 
+  ngOnInit(): void {
+    Aos.init()
+  }
   /** List of projects for the portfolio. */
   projectList: Project;
 
@@ -22,7 +26,7 @@ export class PortfolioComponent {
    * @param router - The Angular router service.
    * @param dS - The data service for managing project data.
    */
-  constructor(private router: Router, public dS: DataServiceService) {}
+  constructor(private router: Router, public dS: DataServiceService) { }
 
   /** Reference to the portfolio element. */
   @ViewChild('portfolio') portfolio: ElementRef;

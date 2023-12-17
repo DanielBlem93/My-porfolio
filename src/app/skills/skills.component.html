@@ -1,17 +1,30 @@
 <section id="skills" #skills>
   <img class="shape3" src="../../assets/img/shape3.svg" alt="" />
   <div id="skills-container">
-    <button onclick="window.location.href='#contact'" class="button-green skills-button skills-button-mobile">Get in touch</button>
-    <div class="skill-icons-container">
+    <button
+      onclick="window.location.href='#contact'"
+      class="button-green skills-button skills-button-mobile"
+    >
+      Get in touch
+    </button>
+    <div
+      data-aos="fade-right"
+      data-aos-delay="225"
+      data-aos-easing="ease-in-out"
+      class="skill-icons-container"
+    >
       <div class="skill-icons" *ngFor="let imageUrl of imageUrls">
         <img class="skill-icon" [src]="imageUrl" alt="Icon" />
         <p>{{ getFileName(imageUrl) }}</p>
       </div>
     </div>
 
-
-
-    <div id="my-skills-container">
+    <div
+      data-aos="fade-left"
+      data-aos-delay="400"
+      data-aos-easing="ease-in-out"
+      id="my-skills-container"
+    >
       <div id="skills-text">
         <div class="headline-container">
           <h1>My skills</h1>
@@ -24,8 +37,12 @@
         <div style="display: none" class="skills-line skills-line-mobile"></div>
       </div>
       <div class="skills-line"></div>
-      <button onclick="window.location.href='#contact'" class="button-green skills-button">Get in touch</button>
+      <button
+        onclick="window.location.href='#contact'"
+        class="button-green skills-button"
+      >
+        Get in touch
+      </button>
     </div>
-    
   </div>
 </section>

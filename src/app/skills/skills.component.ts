@@ -1,4 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import Aos from 'aos';
 
 /**
  * Component for displaying skills with corresponding icons.
@@ -8,7 +9,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
+
+  ngOnInit(): void {
+    Aos.init()
+  }
   /** Reference to the skills element. */
   @ViewChild('skills') skills: ElementRef;
 

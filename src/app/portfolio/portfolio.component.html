@@ -1,24 +1,35 @@
 <section id="portfolio" #portfolio>
-  <img class="shape4" src="../../assets/img/shape4.svg">
-  <img class="shape5" src="../../assets/img/shape5.svg">
+  <img class="shape4" src="../../assets/img/shape4.svg" />
+  <img class="shape5" src="../../assets/img/shape5.svg" />
   <div id="headline-container">
     <div style="opacity: 0" class="long-line"></div>
     <div class="flex-container">
-      <div id="headline">
+      <div
+        data-aos="slide-right"
+        data-aos-delay="225"
+        data-aos-easing="ease-in-out"
+        id="headline"
+      >
         <div class="short-line"></div>
         <h1>Portfolio</h1>
         <div class="long-line"></div>
       </div>
     </div>
   </div>
-  <span class="portfolio-description"
+  <span
+    data-aos="fade-in"
+    data-aos-delay="100"
+    data-aos-easing="ease-in"
+    class="portfolio-description"
     >This page is a sample of my work - please feel free to try them out.</span
   >
   <div id="portfolio-container">
-
     <div
       class="projekts-container"
       *ngFor="let project of dS.projectList; let i = index"
+      data-aos="fade-up"
+      data-aos-delay="400"
+      data-aos-easing="ease-in-out"
     >
       <img [src]="project.image" alt="" />
       <div class="projekt-description">
@@ -43,6 +54,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
