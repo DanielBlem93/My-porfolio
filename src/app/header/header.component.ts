@@ -34,11 +34,13 @@ export class HeaderComponent {
     if (this.isMenuOpen) {
   
       this.toggleNav( 'translateX(105vw)', '0')
-      document.body.style.overflow = 'hidden';
-    } else {
-      this.toggleNav( 'translateX(0)','1')
       document.body.style.overflow = 'auto';
       document.body.style.overflowX = 'hidden';
+
+    } else {
+      this.toggleNav( 'translateX(0)','1')
+      document.body.style.overflow = 'hidden';
+   
     }
     this.isMenuOpen = !this.isMenuOpen;
   }
