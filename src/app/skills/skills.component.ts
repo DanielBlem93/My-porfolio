@@ -25,7 +25,7 @@ export class SkillsComponent implements OnInit {
     '/assets/img/icons/HTML.svg',
     '/assets/img/icons/CSS.svg',
     '/assets/img/icons/Firebase.svg',
-    '/assets/img/icons/WordPress.svg',
+    // '/assets/img/icons/WordPress.svg',
     '/assets/img/icons/GIT.svg',
     '/assets/img/icons/Rest-Api.svg',
     '/assets/img/icons/Scrum.svg',

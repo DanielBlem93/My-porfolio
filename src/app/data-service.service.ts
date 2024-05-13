@@ -39,7 +39,8 @@ export class DataServiceService {
         description: 'A Slack clone app that facilitates smooth team communication and collaboration through messaging, file sharing, and customizable channels to enhance workplace efficiency.',
         technologies: ['Angular | TypeScript | HTML | SCSS | Firebase '],
         githubLink: 'https://github.com/DanielBlem93/DA-Bubble',
-        projectUrl: 'https://daniel-blem.de/angular-projects/dabubble/index.html',
+        projectUrl: 'https://dabubble-88.developerakademie.net/angular-projects/DABubble/singup',
+        // projectUrl: 'https://daniel-blem.de/angular-projects/dabubble/index.html',
       },
     ];
   }
