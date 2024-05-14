@@ -23,7 +23,7 @@ export class DataServiceService {
         description: 'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the giant Chicken.',
         technologies: ['JavaScript | HTML | CSS |'],
         githubLink: 'https://github.com/DanielBlem93/el-pollo-loco',
-        projectUrl: 'https://daniel-blem.de/el-pollo-loco/index.html',
+        projectUrl: 'https://el-pollo-loco.daniel-blem.de/index.html',
       },
       {
         name: 'Join',
@@ -31,7 +31,7 @@ export class DataServiceService {
         description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
         technologies: ['JavaScript | HTML | CSS'],
         githubLink: 'https://github.com/DanielBlem93/join',
-        projectUrl: 'https://daniel-blem.de/join/index.html'
+        projectUrl: 'https://join.daniel-blem.de/index.html'
       },
       {
         name: 'DABubble',
@@ -39,8 +39,7 @@ export class DataServiceService {
         description: 'A Slack clone app that facilitates smooth team communication and collaboration through messaging, file sharing, and customizable channels to enhance workplace efficiency.',
         technologies: ['Angular | TypeScript | HTML | SCSS | Firebase '],
         githubLink: 'https://github.com/DanielBlem93/DA-Bubble',
-        projectUrl: 'https://dabubble-88.developerakademie.net/angular-projects/DABubble/singup',
-        // projectUrl: 'https://daniel-blem.de/angular-projects/dabubble/index.html',
+        projectUrl: 'https://dabubble.daniel-blem.de/singup',
       },
     ];
   }
