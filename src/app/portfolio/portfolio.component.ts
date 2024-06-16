@@ -20,7 +20,7 @@ export class PortfolioComponent implements OnInit {
   }
   /** List of projects for the portfolio. */
   projectList: Project;
-
+  test = {}
   /**
    * Constructor for PortfolioComponent.
    * @param router - The Angular router service.

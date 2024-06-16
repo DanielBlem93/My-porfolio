@@ -3,7 +3,7 @@
     <div class="small-line-contact"></div>
 
     <h2>Contact</h2>
-    <div    data-aos="fade-up" data-aos-delay="200" id="form-container">
+    <div data-aos="fade-up" data-aos-delay="200" id="form-container">
       <div class="text-container">
         <h3>Got a problem to solve?</h3>
         <p>
@@ -66,10 +66,13 @@
               updateAllFieldsValid()
             "
           />
+
+          @if(fieldStatus.email){
           <img
-            *ngIf="fieldStatus.email"
             src="../../assets/img/icons/Frame.svg"
           />
+        }
+
           <img
             *ngIf="!fieldStatus.email && formActive"
             src="../../assets/img/icons/invaild.svg"
@@ -124,7 +127,12 @@
                 the processing of my data as outlined.
               </p>
 
-              <p   *ngIf="!fieldStatus.privacyPolicy && formActive"  class="accept">Please accept the privacy policy.</p>
+              <p
+                *ngIf="!fieldStatus.privacyPolicy && formActive"
+                class="accept"
+              >
+                Please accept the privacy policy.
+              </p>
             </div>
           </div>
         </div>
@@ -140,9 +148,8 @@
         >
           Send message :)
         </button>
-
       </form>
-      <img 
+      <img
         onclick="window.location.href='#'"
         class="pageUp"
         src="../../assets/img/icons/Go up button.svg"

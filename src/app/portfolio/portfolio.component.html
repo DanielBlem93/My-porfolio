@@ -24,9 +24,9 @@
     >This page is a sample of my work - please feel free to try them out.</span
   >
   <div id="portfolio-container">
+    @for(project of dS.projectList; track $index ){
     <div
       class="projekts-container"
-      *ngFor="let project of dS.projectList; let i = index"
       data-aos="fade-up"
       data-aos-delay="400"
       data-aos-easing="ease-in-out"
@@ -54,5 +54,6 @@
         </div>
       </div>
     </div>
+    }
   </div>
 </section>
