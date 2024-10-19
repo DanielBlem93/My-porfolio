@@ -68,15 +68,10 @@
           />
 
           @if(fieldStatus.email){
-          <img
-            src="../../assets/img/icons/Frame.svg"
-          />
-        }
-
-          <img
-            *ngIf="!fieldStatus.email && formActive"
-            src="../../assets/img/icons/invaild.svg"
-          />
+          <img src="../../assets/img/icons/Frame.svg" />
+          } @else if(!fieldStatus.email && formActive){
+          <img src="../../assets/img/icons/invaild.svg" />
+          }
         </div>
 
         <div class="input-container">
