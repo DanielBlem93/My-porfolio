@@ -16,6 +16,11 @@ export class DataServiceService {
    * Initializes the projectList array with project data.
    */
   constructor() {
+    this.setProjects()
+  }
+
+  setProjects() {
+
     this.projectList = [
       {
         name: 'DABubble',
@@ -52,4 +57,5 @@ export class DataServiceService {
       },
     ];
   }
+
 }
