@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project.interface';
 
-/**
- * Service for managing data related to projects.
- */
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataServiceService {
-  /** Array containing project data. */
+  lang: string = 'en';
+
   public projectList: Project[];
 
-  /**
-   * Constructor for DataServiceService.
-   * Initializes the projectList array with project data.
-   */
+
   constructor() {
     this.setProjects()
   }
@@ -23,12 +20,12 @@ export class DataServiceService {
 
     this.projectList = [
       {
-        name: 'DABubble',
-        image: '../../assets/img/projects/dabubble-lappi.png ',
-        description: 'A Slack clone app that facilitates smooth team communication and collaboration through messaging, file sharing, and customizable channels to enhance workplace efficiency.',
+        name: 'Join',
+        image: '../../assets/img/projects/join.svg',
+        description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
         technologies: ['Angular | TypeScript | HTML | SCSS | Firebase '],
-        githubLink: 'https://github.com/DanielBlem93/DA-Bubble',
-        projectUrl: 'https://dabubble.daniel-blem.de/singup',
+        githubLink: 'https://github.com/DanielBlem93/Join-with-angular',
+        projectUrl: 'https://join.daniel-blem.de/index.html'
       },
       {
         name: 'El Pollo loco',
@@ -39,14 +36,13 @@ export class DataServiceService {
         projectUrl: 'https://el-pollo-loco.daniel-blem.de/index.html',
       },
       {
-        name: 'Join',
-        image: '../../assets/img/projects/join.svg',
-        description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-        technologies: ['JavaScript | HTML | CSS'],
-        githubLink: 'https://github.com/DanielBlem93/join',
-        projectUrl: 'https://join.daniel-blem.de/index.html'
+        name: 'DABubble',
+        image: '../../assets/img/projects/dabubble-lappi.png ',
+        description: 'A Slack clone app that facilitates smooth team communication and collaboration through messaging, file sharing, and customizable channels to enhance workplace efficiency.',
+        technologies: ['Angular | TypeScript | HTML | SCSS | Firebase '],
+        githubLink: 'https://github.com/DanielBlem93/DA-Bubble',
+        projectUrl: 'https://dabubble.daniel-blem.de/singup',
       },
-
       {
         name: 'Pokedex',
         image: '../../assets/img/projects/pokedex.png ',

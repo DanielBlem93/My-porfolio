@@ -7,21 +7,27 @@
     >
 
     <nav id="nav-desktop">
-      <a
-        class="navLinks"
-        href="#about-me"
-        >About me</a
-      >
-      <a
-        class="navLinks"
-        href="#skills-app"
-        >Skills</a
-      >
-      <a
-        class="navLinks"
-        href="#portfolio"
-        >Portfolio</a
-      >
+      <div class="lang-container">
+        <img
+          *ngIf="dataService.lang === 'en'"
+          class="lang"
+          src="../../assets/img/icons/english.svg"
+          alt="english-flag"
+          title="Wechsel Sprache zu Deutsch"
+          (click)="changeLang('de')"
+        />
+        <img
+          *ngIf="dataService.lang === 'de'"
+          class="lang"
+          src="../../assets/img/icons/german.svg"
+          alt="german-flag"
+          title="Change language to english"
+          (click)="changeLang('en')"
+        />
+      </div>
+      <a class="navLinks" href="#about-me">About me</a>
+      <a class="navLinks" href="#skills-app">Skills</a>
+      <a class="navLinks" href="#portfolio">Portfolio</a>
     </nav>
 
     <nav id="nav-mobile" style="display: none">
@@ -41,12 +47,14 @@
           alt="Menü geschlossen"
         />
       </div>
-      <div  id="nav-menu" style="display: flex">
+      <div id="nav-menu" style="display: flex">
         <div class="links-container">
           <a (click)="toggleMenu()" class="navLinks" href="#about-me"
             >About me</a
           >
-          <a (click)="toggleMenu()" class="navLinks" href="#skills-app">Skills</a>
+          <a (click)="toggleMenu()" class="navLinks" href="#skills-app"
+            >Skills</a
+          >
           <a (click)="toggleMenu()" class="navLinks" href="#portfolio"
             >Portfolio</a
           >

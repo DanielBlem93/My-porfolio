@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
 
 
 
@@ -10,6 +11,7 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 
 export class HeaderComponent {
+
   isMenuOpen = false;
 
 
@@ -20,7 +22,7 @@ export class HeaderComponent {
   }
 
 
-  constructor() {}
+  constructor(public dataService: DataServiceService) { }
 
 
   animationImages = [
@@ -32,24 +34,29 @@ export class HeaderComponent {
   toggleMenu() {
 
     if (this.isMenuOpen) {
-  
-      this.toggleNav( 'translateX(105vw)', '0')
+
+      this.toggleNav('translateX(105vw)', '0')
       document.body.style.overflow = 'auto';
       document.body.style.overflowX = 'hidden';
 
     } else {
-      this.toggleNav( 'translateX(0)','1')
+      this.toggleNav('translateX(0)', '1')
       document.body.style.overflow = 'hidden';
-   
+
     }
     this.isMenuOpen = !this.isMenuOpen;
   }
 
 
-  toggleNav( width: string, opacity:string) {
+  toggleNav(width: string, opacity: string) {
     let nav = document.getElementById('nav-menu');
     nav.style.opacity = opacity
     nav.style.transform = width;
 
+  }
+
+
+  changeLang(lang: string) {
+    this.dataService.lang = lang;
   }
 }
