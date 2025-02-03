@@ -2,15 +2,33 @@
   <div id="contact-container">
     <div class="small-line-contact"></div>
 
-    <h2>Contact</h2>
+
+    @if (dataService.lang === 'en') {
+      <h2>Contact</h2>
+      } @else {
+        <h2>Kontakt</h2>
+      }
     <div data-aos="fade-up" data-aos-delay="200" id="form-container">
       <div class="text-container">
+        @if (dataService.lang === 'en') {
         <h3>Got a problem to solve?</h3>
         <p>
-          Contact me through this form. I am interested in hearing you, knowing
-          your ideas and contributing to your projects with my work.
+          Contact me using this form. I am interested in hearing from you,
+          getting to know your your ideas and contribute to your projects with
+          my work.
         </p>
         <p>Need a Frontend developer? <b>Contact me!</b></p>
+        } @else {
+        <h3>Sie haben ein Problem zu lösen?</h3>
+        <p>
+          Nehmen Sie über dieses Formular Kontakt mit mir auf. Ich bin daran
+          interessiert, von Ihnen zu hören, Ihre Ideen kennenzulernen und mit
+          meiner Arbeit zu Ihren Projekten beizutragen.
+        </p>
+        <p>
+          Benötigen Sie einen Frontend-Entwickler? <b>Kontaktieren Sie mich!</b>
+        </p>
+        }
       </div>
 
       <form
@@ -23,7 +41,11 @@
           <input
             type="text"
             name="name"
-            placeholder="Your name"
+            
+            [placeholder]="
+            dataService.lang === 'en'
+              ? 'Your name'
+              : 'Dein Name'"
             required
             #nameField="ngModel"
             [(ngModel)]="formData.name"
@@ -51,7 +73,11 @@
             type="email"
             name="email"
             id="email"
-            placeholder="Your email"
+    
+            [placeholder]="
+            dataService.lang === 'en'
+              ? 'Your Email'
+              : 'Deine Email'"
             #emailField="ngModel"
             required
             [(ngModel)]="formData.email"
@@ -78,7 +104,10 @@
           <textarea
             type="text"
             name="message"
-            placeholder="Your message"
+            [placeholder]="
+              dataService.lang === 'en'
+                ? 'Your Message'
+                : 'Deine Nachricht'"
             #messageField="ngModel"
             required
             [(ngModel)]="formData.message"
@@ -117,16 +146,20 @@
             />
             <div>
               <p>
-                I've read the
-                <a class="policy-link" href="">privacy policy</a> and agree to
-                the processing of my data as outlined.
+                @if (dataService.lang === 'en') { I've read the
+                <a class="policy-link">privacy policy</a> and agree to
+                the processing of my data as outlined. }@else { Ich habe die
+                <a class="policy-link">Datenschutzerklärung</a> gelesen
+                und stimme der Verarbeitung meiner Daten wie beschrieben zu. }
               </p>
 
               <p
                 *ngIf="!fieldStatus.privacyPolicy && formActive"
                 class="accept"
               >
-                Please accept the privacy policy.
+                @if (dataService.lang === 'en') { Please accept the privacy
+                policy. }@else { Bitte akzeptieren Sie die Datenschutzerklärung.
+                }
               </p>
             </div>
           </div>
@@ -141,7 +174,8 @@
             'button-grey': !fieldStatus.allFieldsValid
           }"
         >
-          Send message :)
+          @if (dataService.lang === 'en') { Send message :) }@else { Nachricht
+          senden :) }
         </button>
       </form>
       <img
@@ -152,7 +186,8 @@
       />
     </div>
     <div id="messageSent" *ngIf="messageSent" class="confirmation-message">
-      Message has been sent successfully!
+      @if (dataService.lang === 'en') { Message has been sent successfully!
+      }@else { Nachricht wurde erfolgreich gesendet! }
     </div>
   </div>
 </section>

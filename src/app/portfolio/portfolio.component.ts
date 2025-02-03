@@ -18,14 +18,11 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     Aos.init()
   }
-  /** List of projects for the portfolio. */
+
   projectList: Project;
   test = {}
-  /**
-   * Constructor for PortfolioComponent.
-   * @param router - The Angular router service.
-   * @param dS - The data service for managing project data.
-   */
+
+  
   constructor(private router: Router, public dS: DataServiceService) { }
 
   /** Reference to the portfolio element. */

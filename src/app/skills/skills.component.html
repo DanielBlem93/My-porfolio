@@ -4,8 +4,9 @@
     <button
       onclick="window.location.href='#contact'"
       class="button-green skills-button skills-button-mobile"
+      [ngClass]="{ 'ger-btn': dataService.lang === 'de' }"
     >
-      Get in touch
+      @if (dataService.lang ==='en') { Get in touch }@else { Kontakt aufnehmen }
     </button>
     <div
       data-aos="fade-right"
@@ -17,6 +18,19 @@
         <img class="skill-icon" [src]="imageUrl" alt="Icon" />
         <p>{{ getFileName(imageUrl) }}</p>
       </div>
+      <div class="skill-icons">
+        <img
+          class="skill-icon"
+          src="../../assets/img/icons/challengeMe.png"
+          alt="Icon"
+          [title]="
+            dataService.lang === 'en'
+              ? 'I am always happy to learn new technologies,just tell me what you need.'
+              : 'Ich bin immer gerne bereit, neue Technologien zu erlernen, sagen Sie mir einfach, was Sie brauchen.'
+          "
+        />
+        <p>Challenge me</p>
+      </div>
     </div>
 
     <div
@@ -27,22 +41,40 @@
     >
       <div id="skills-text">
         <div class="headline-container">
+          @if (dataService.lang === 'en') {
           <h1>My skills</h1>
-
-          <p>
-            I have gained experience in building projects with various front end
-            technologies and concepts.
-          </p>
+          } @else {
+          <h1 class="h1-german">Meine Fähigkeiten</h1>
+          }
         </div>
+        @if (dataService.lang === 'en') {
+        <p>
+          I have gained experience in building projects with various front end
+          technologies and concepts.
+        </p>
+        } @else {
+        <p>
+          Ich habe Erfahrung im Erstellen von Projekten mit verschiedenen
+          Frontend-Technologien und -Konzepten gesammelt.
+        </p>
+        }
         <div style="display: none" class="skills-line skills-line-mobile"></div>
       </div>
       <div class="skills-line"></div>
+      @if (dataService.lang === 'en') {
       <button
         onclick="window.location.href='#contact'"
         class="button-green skills-button"
       >
         Get in touch
       </button>
+      } @else {
+      <button
+        onclick="window.location.href='#contact'"
+        class="button-green skills-button ger-btn"
+      >
+        Kontakt aufnehmen</button
+      >}
     </div>
   </div>
 </section>

@@ -2,7 +2,6 @@
   <img class="shape1" src="../../assets/img/shape.1.svg" />
   <img class="shape-mobile1" src="../../assets/img/Vectorshape.svg" />
 
-
   <div id="intro-container">
     <div id="me-container">
       <img
@@ -16,14 +15,17 @@
 
     <div id="introduceing-container">
       <div class="text-container">
-        <span>I am</span>
+        @if (dataService.lang === 'en') { <span>I am</span>} @else {
+        <span class="german-text">Ich bin</span> }
+
         <div class="name-container">
           <span>Daniel Blem</span>
-          <span>Frontend Developer</span>
+          @if (dataService.lang === 'en') { <span>Frontend Developer</span>}
+          @else { <span>Frontend Entwickler</span> }
         </div>
       </div>
       <button onclick="window.location.href='#contact'" class="button-green">
-        Let's talk!
+        @if (dataService.lang === 'en') { Let's talk!} @else { Las uns reden!}
       </button>
     </div>
   </div>
@@ -38,7 +40,7 @@
           alt="Github Icon"
       /></a>
 
-      <a  href="mailto:mail@daniel-blem.de">
+      <a href="mailto:mail@daniel-blem.de">
         <img
           class="socialIcon emailIcon."
           src="../../assets/img/icons/emailIcon.svg"
@@ -58,8 +60,8 @@
       >
     </div>
     <div class="scrollDown">
-      <a class="regularLink scroll-down" href="#portfolio"
-        >Scroll down
+      <a class="regularLink scroll-down" href="#portfolio">
+        @if (dataService.lang === 'en') { Scroll down} @else {Runter scrollen }
         <svg
           href="#"
           class="s"

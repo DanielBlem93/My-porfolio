@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import Aos from 'aos';
+import { DataServiceService } from '../data-service.service';
 
 /**
  * Component for displaying skills with corresponding icons.
@@ -11,13 +12,18 @@ import Aos from 'aos';
 })
 export class SkillsComponent implements OnInit {
 
+  constructor(public dataService: DataServiceService) {
+    
+  }
+
+
   ngOnInit(): void {
     Aos.init()
   }
-  /** Reference to the skills element. */
+
   @ViewChild('skills') skills: ElementRef;
 
-  /** Array of image URLs representing skills icons. */
+
   imageUrls: string[] = [
     '/assets/img/icons/Angular.svg',
     '/assets/img/icons/TypeScript.svg',

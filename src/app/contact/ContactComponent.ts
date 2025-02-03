@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import Aos from 'aos';
+import { DataServiceService } from '../data-service.service';
 /**
  * Contact Component for handling contact form functionality.
  */
@@ -38,6 +39,10 @@ export class ContactComponent implements OnInit {
     privacyPolicy: false,
     allFieldsValid: false
   };
+
+constructor(public dataService:DataServiceService) {
+  
+}
 
   ngOnInit(): void {
     Aos.init()

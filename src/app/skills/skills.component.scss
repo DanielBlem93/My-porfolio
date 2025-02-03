@@ -7,7 +7,6 @@
   width: 100vw;
   gap: 100px;
   z-index: 3;
-  
 }
 #skills-container {
   display: flex;
@@ -68,9 +67,18 @@
   }
 }
 
+.h1-german {
+  font-size: 82px !important;
+}
+.ger-btn {
+  font-size: 16px !important;
+  align-self: flex-end;
+}
+
 #skills-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 32px;
 }
 
@@ -118,6 +126,20 @@
     gap: 100px;
   }
 
+  #skills-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  #my-skills-container{
+      p{
+        text-align: center;
+      }
+  }
+  .skills-button{
+      align-self: center;
+  }
+
   .skill-icons-container {
     width: 100%;
     align-items: center;
@@ -125,14 +147,15 @@
   }
 }
 @media (max-width: 1060px) {
+  .h1-german {
+    font-size: 52px !important;
+    text-align: center !important;
+  }
 }
 @media (max-width: 768px) {
   #skills-text {
-    flex-direction: row;
     gap: unset;
     gap: 48px;
-    & p {
-    }
   }
   .skill-icons-container {
     width: 100%;
@@ -151,10 +174,10 @@
   }
 
   .skills-line-mobile {
-    top: 34px;
+    top: 40px;
     right: 32px;
     position: relative;
-    display: unset !important;
+    display: none !important;
   }
 
   .headline-container {
@@ -162,7 +185,7 @@
 
     flex-direction: column;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .skills-button {
@@ -175,6 +198,9 @@
 }
 
 @media (max-width: 500px) {
+  .h1-german {
+    font-size: 36px !important;
+  }
   #skills {
     margin-top: 100px;
   }

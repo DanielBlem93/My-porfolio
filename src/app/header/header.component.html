@@ -25,12 +25,35 @@
           (click)="changeLang('en')"
         />
       </div>
+      @if (dataService.lang === 'en') {
       <a class="navLinks" href="#about-me">About me</a>
       <a class="navLinks" href="#skills-app">Skills</a>
       <a class="navLinks" href="#portfolio">Portfolio</a>
+      } @else {
+      <a class="navLinks" href="#about-me">Über mich</a>
+      <a class="navLinks" href="#skills-app">Fähigkeiten</a>
+      <a class="navLinks" href="#portfolio">Portfolio</a>}
     </nav>
 
     <nav id="nav-mobile" style="display: none">
+      <div class="lang-container">
+        <img
+          *ngIf="dataService.lang === 'en'"
+          class="lang"
+          src="../../assets/img/icons/english.svg"
+          alt="english-flag"
+          title="Wechsel Sprache zu Deutsch"
+          (click)="changeLang('de')"
+        />
+        <img
+          *ngIf="dataService.lang === 'de'"
+          class="lang"
+          src="../../assets/img/icons/german.svg"
+          alt="german-flag"
+          title="Change language to english"
+          (click)="changeLang('en')"
+        />
+      </div>
       <div id="burger-menu-container">
         <img
           (click)="toggleMenu()"
@@ -49,6 +72,7 @@
       </div>
       <div id="nav-menu" style="display: flex">
         <div class="links-container">
+          @if (dataService.lang === 'en') {
           <a (click)="toggleMenu()" class="navLinks" href="#about-me"
             >About me</a
           >
@@ -59,6 +83,19 @@
             >Portfolio</a
           >
           <a (click)="toggleMenu()" class="navLinks" href="#contact">Contact</a>
+        }@else {
+            <a (click)="toggleMenu()" class="navLinks" href="#about-me"
+              >Über mich</a
+            >
+            <a (click)="toggleMenu()" class="navLinks" href="#skills-app"
+              >Fähigkeiten</a
+            >
+            <a (click)="toggleMenu()" class="navLinks" href="#portfolio"
+              >Portfolio</a
+            >
+            <a (click)="toggleMenu()" class="navLinks" href="#contact">Kontakt</a>
+
+          }
         </div>
       </div>
     </nav>

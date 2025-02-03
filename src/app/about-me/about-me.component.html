@@ -7,16 +7,10 @@
       data-aos-duration="4000"
       id="about-me-text-container"
     >
+      @if (dataService.lang === 'en') {
       <h2 data-aos="slide-right" data-aos-duration="4000" data-aos-delay="125">
         About me
       </h2>
-      <p style="display: none" class="text-german">
-        Als angehender Frontendentwickler, aus dem Landkreis Osnabrück, strebe
-        ich danach, in Zukunft als Junior Frontendentwickler Fuß zu fassen. Auf
-        meiner Portfolio-Seite präsentiere ich meine bisherigen Projekte und
-        teile meine Reise als Webentwickler. Willkommen auf meiner Seite! Ich
-        freue mich darauf, Ihnen einen Einblick in meine Arbeit zu geben.
-      </p>
       <p class="text-english">
         I am a Junior Frontend Developer from the district of Osnabrück. On my
         portfolio page, I showcase my previous projects and share my journey as
@@ -25,35 +19,61 @@
       </p>
       <div class="text-container">
         <img src="../../assets/img/light.svg" alt="glow plug icon" />
-        <p style="display: none" class="text-german">
-          Meine Begeisterung für die Programmierung kommt besonders dann zum
-          Ausdruck, wenn es darum geht, knifflige Probleme zu lösen. Ich
-          betrachte jede Programmieraufgabe als eine Herausforderung und
-          zugleich als eine ideale Gelegenheit, meine Fähigkeiten weiter zu
-          verbessern.
-        </p>
         <p>
-          I'm really passionate about programming. I see every coding task as a
-          chance to challenge myself and improve my skills.
+          I am very stubborn when it comes to programming. I see every coding
+          task as a chance to challenge myself and improve my skills.
         </p>
       </div>
       <div class="text-container">
         <img src="../../assets/img/puzzle.svg" alt="puzzle icon" />
-        <p style="display: none" class="text-german">
-          Ein bedeutendes Ziel ist es für mich, aktiv an einzigartigen Projekten
-          teilzunehmen. Die Zusammenarbeit in Teams, die meine Leidenschaft für
-          innovative Lösungen teilen, ist für mich von besonderem Wert. Dabei
-          geht es nicht nur darum, meine Fähigkeiten zu schärfen, sondern auch
-          konkrete Probleme kreativ zu bewältigen. Insgesamt strebe ich danach,
-          mich kontinuierlich weiterzuentwickeln, um schließlich in Zukunft
-          irgendwann als Full-Stack-Entwickler tätig zu sein.
-        </p>
         <p>
-          A big goal for me is to join interesting projects, working with teams
-          who share my love for coding and become a full-stack
-          developer in the future.
+          A big goal for me is to work on interesting projects,It is important
+          to me to collaborate with teams who share my passion for IT.
         </p>
       </div>
+      <div class="text-container">
+        <img src="../../assets/img/icons/brain-3-64.png" alt="puzzle icon" />
+        <p>
+          I got a growth mindset and a particular interest in learning new
+          technologies such as React, Vue.Js or Python. In the future, it is
+          also my goal is to become a full-stack developer.
+        </p>
+      </div>
+      } @else {
+      <h2 data-aos="slide-right" data-aos-duration="4000" data-aos-delay="125">
+        Über mich
+      </h2>
+      <p class="text-german">
+        Ich bin ein Junior Frontend Developer aus dem Landkreis Osnabrück. Auf
+        meiner Portfolio-Seite präsentiere ich meine bisherigen Projekte und
+        teile meine Reise als Webentwickler. Herzlich willkommen auf meiner
+        Seite! Ich freue mich, euch Einblicke in meine Arbeit zu geben.
+      </p>
+      <div class="text-container">
+        <img src="../../assets/img/light.svg" alt="glow plug icon" />
+        <p class="text-german">
+          Ich bin sehr hartnäckig beim programmieren. Ich sehe jede
+          Programmieraufgabe als Chance, mich selbst herauszufordern und meine
+          meine Fähigkeiten zu verbessern.
+        </p>
+      </div>
+      <div class="text-container">
+        <img src="../../assets/img/puzzle.svg" alt="puzzle icon" />
+        <p class="text-german">
+          Ein besonderes Anliegen ist es mir, an anspruchsvollen Projekten zu
+          arbeiten. Dabei ist es mir wichtig, mit Teams zusammenzuarbeiten, die
+          meine Leidenschaft für die IT teilen.
+        </p>
+      </div>
+      <div class="text-container">
+        <img src="../../assets/img/icons/brain-3-64.png" alt="puzzle icon" />
+        <p class="text-german">
+          Ich bin daran interessiert, neue Technologien zu erlernen.
+          Insbesondere an React, Vue.Js oder Python. Zudem ist es in Zukunft mein
+          Ziel ein Full-Stack-Entwicklers zu werden.
+        </p>
+      </div>
+      }
     </div>
     <div
       data-aos="slide-left"

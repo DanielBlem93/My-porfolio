@@ -6,7 +6,7 @@
     <div class="flex-container">
       <div
         data-aos="slide-right"
-        data-aos-delay="225"
+        data-aos-delay="125"
         data-aos-easing="ease-in-out"
         id="headline"
       >
@@ -21,8 +21,11 @@
     data-aos-delay="100"
     data-aos-easing="ease-in"
     class="portfolio-description"
-    >This page is a sample of my work - please feel free to try them out.</span
   >
+    @if (dS.lang === 'en') { This page is a sample of my work - please feel free
+    to try them out. } @else {Diese Seite ist eine Auswahl meiner Arbeiten –
+    probieren Sie sie gerne aus }
+  </span>
   <div id="portfolio-container">
     @for(project of dS.projectList; track $index ){
     <div
@@ -36,7 +39,11 @@
         <h2>{{ project.name }}</h2>
         <span class="tech-font">{{ project.technologies }}</span>
         <p>
+          @if (dS.lang === 'en') {
           {{ project.description }}
+          } @else {
+          {{ project.descriptionDE }}
+          }
         </p>
         <div class="buttons-container">
           <button

@@ -73,6 +73,10 @@
   }
 }
 
+.german-text{
+  font-size: 42px !important;
+}
+
 .name-container {
   display: flex;
   flex-direction: column;
@@ -115,7 +119,6 @@
 }
 
 .scrollDown {
-  height: 165px;
   font-size: 23px;
   display: flex;
   align-items: center;
@@ -152,13 +155,16 @@
   }
 
   #references-line {
-    top: 625px;
+    bottom: 32px;
   }
   .text-container {
     > span:first-child {
       font-size: 41px;
       height: 111px;
     }
+  }
+  .german-text{
+    font-size: 27px !important;
   }
 
   .name-container {
@@ -256,6 +262,10 @@
       font-size: 32px;
       height: 84px;
     }
+  }
+
+  .german-text{
+    font-size: 20px !important;
   }
   .name-container {
     & span:first-child {
