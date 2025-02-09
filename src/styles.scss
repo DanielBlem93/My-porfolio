@@ -32,11 +32,12 @@
   --darkBlueTransparant: #141d2fcc;
 
   // Margin or the left and right side on the page
-  --mainMargin: 85%;
-
-  
+  --mainMargin: 85%;  
 }
 
+html{
+  box-sizing: border-box;
+}
 * {
   scroll-behavior: smooth;
   font-family: "poppins", Arial, Helvetica, sans-serif;
@@ -68,7 +69,7 @@ body {
   color: white;
   font-size: 20px;
 
-  padding: 15px, 30px, 15px, 30px;
+  padding: 15px 30px 15px 30px;
   margin-top: 50px;
   filter: drop-shadow(4px 4px 4px 0px #00000040);
 
@@ -90,7 +91,7 @@ body {
   justify-content: center;
   width: 152px;
   height: 58px;
-  padding: 15px, 30px, 15px, 30px;
+  padding: 15px 30px 15px 30px;
   border-radius: 10px;
   background-color: var(--purple);
   color: white;
@@ -108,7 +109,7 @@ body {
   justify-content: center;
   width: 152px;
   height: 58px;
-  padding: 15px, 30px, 15px, 30px;
+  padding: 15px 30px 15px 30px;
   border-radius: 10px;
   background-color: transparent;
   color: white;
@@ -127,7 +128,7 @@ body {
   justify-content: center;
   width: 253px;
   height: 58px;
-  padding: 15px, 30px, 15px, 30px;
+  padding: 15px 30px 15px 30px;
   background-color: #b6b6b6;
   border-radius: 10px;
   box-shadow: 4px 4px 4px 0px #00000040;
@@ -140,7 +141,7 @@ body {
   justify-content: center;
   width: 253px;
   height: 58px;
-  padding: 15px, 30px, 15px, 30px;
+  padding: 15px 30px 15px 30px;
   border-radius: 10px;
   box-shadow: 4px 4px 4px 0px #00000040;
   font-size: 23px;
